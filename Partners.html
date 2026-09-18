@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ClearanceIQ™ MSP & RPO Partner Program — Charter Partner Application</title>
+<meta name="description" content="Stop wasting 10 technical hours on non-binding CMMC scoping assessments. ClearanceIQ Charter Partner Program for MSPs and Registered Practitioner Organizations."/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:#F4F7FB;color:#0D1B2A;-webkit-font-smoothing:antialiased;}
+:root{--navy:#070F1E;--cyan:#00C8F0;--border:#E2E8F0;--slate:#64748B;--green:#059669;--purple:#5B21B6;}
+nav{background:var(--navy);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-size:26px;font-weight:800;color:white;font-family:'Barlow Condensed',sans-serif;text-decoration:none;}
+.logo em{color:var(--cyan);font-style:normal;}
+.nav-tag{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(0,200,240,.1);border:1px solid rgba(0,200,240,.25);color:var(--cyan);font-weight:600;letter-spacing:.5px;}
+/* HERO */
+.hero{background:var(--navy);padding:64px 32px;border-bottom:1px solid rgba(0,200,240,.1);}
+.hero-inner{max-width:960px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--cyan);}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:900;color:white;font-family:'Barlow Condensed',sans-serif;line-height:1.1;margin-bottom:16px;}
+.hero h1 em{color:var(--cyan);font-style:normal;}
+.hero-sub{font-size:18px;color:#607090;max-width:680px;line-height:1.65;margin-bottom:32px;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:680px;}
+.stat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:16px 20px;}
+.stat-n{font-size:28px;font-weight:900;color:var(--cyan);font-family:'Barlow Condensed',sans-serif;line-height:1;margin-bottom:4px;}
+.stat-l{font-size:11px;color:#405570;line-height:1.4;}
+/* SECTIONS */
+.section{padding:64px 32px;}
+.section-inner{max-width:960px;margin:0 auto;}
+.section-ey{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:8px;}
+.section-h{font-size:clamp(24px,3.5vw,36px);font-weight:800;color:var(--navy);font-family:'Barlow Condensed',sans-serif;line-height:1.1;margin-bottom:12px;}
+.section-s{font-size:16px;color:var(--slate);max-width:600px;line-height:1.65;}
+/* HOW IT WORKS */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+.flow-card{background:white;border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;}
+.flow-num{width:36px;height:36px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:var(--cyan);font-family:'Barlow Condensed',sans-serif;margin-bottom:14px;}
+.flow-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.flow-desc{font-size:13px;color:var(--slate);line-height:1.55;}
+.flow-arr{position:absolute;right:-13px;top:32px;width:26px;height:26px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--navy);font-weight:700;z-index:1;}
+/* REVENUE CALCULATOR */
+.calc-wrap{background:var(--navy);border-radius:16px;padding:40px;margin-top:40px;}
+.calc-title{font-size:24px;font-weight:800;color:white;font-family:'Barlow Condensed',sans-serif;margin-bottom:6px;}
+.calc-sub{font-size:14px;color:#607090;margin-bottom:28px;}
+.calc-slider-wrap{margin-bottom:20px;}
+.calc-label{display:flex;justify-content:space-between;font-size:13px;color:#607090;margin-bottom:6px;}
+.calc-label strong{color:white;}
+input[type=range]{width:100%;-webkit-appearance:none;height:6px;background:rgba(255,255,255,.08);border-radius:3px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--cyan);border-radius:50%;cursor:pointer;}
+.calc-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.calc-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;text-align:center;}
+.calc-box-n{font-size:26px;font-weight:900;font-family:'Barlow Condensed',sans-serif;line-height:1;margin-bottom:4px;}
+.calc-box-l{font-size:11px;color:#405570;}
+/* TECHNICAL PROOF */
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;}
+.tech-card{background:white;border:1px solid var(--border);border-radius:12px;padding:24px;}
+.tech-icon{font-size:28px;margin-bottom:12px;}
+.tech-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.tech-desc{font-size:13px;color:var(--slate);line-height:1.6;}
+.code-block{background:#0A1628;border-radius:8px;padding:14px;font-family:'Courier New',monospace;font-size:11px;line-height:1.8;margin-top:10px;border:1px solid rgba(0,200,240,.1);}
+/* PARTNER TIERS */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.tier-card{background:white;border:2px solid var(--border);border-radius:16px;padding:28px;}
+.tier-card.featured{border-color:var(--cyan);background:linear-gradient(135deg,#E0F7FD,#F4FDFF);}
+.tier-name{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);margin-bottom:6px;}
+.tier-title{font-size:22px;font-weight:800;color:var(--navy);font-family:'Barlow Condensed',sans-serif;margin-bottom:4px;}
+.tier-earn{font-size:20px;font-weight:700;color:var(--green);margin-bottom:12px;}
+.tier-div{height:1px;background:var(--border);margin-bottom:12px;}
+.tier-item{display:flex;gap:8px;font-size:13px;color:var(--slate);margin-bottom:8px;align-items:flex-start;line-height:1.5;}
+/* APPLICATION FORM */
+.app-wrap{background:white;border:2px solid var(--border);border-radius:20px;padding:40px;max-width:600px;margin:40px auto 0;}
+.app-title{font-size:26px;font-weight:800;color:var(--navy);font-family:'Barlow Condensed',sans-serif;margin-bottom:6px;}
+.app-sub{font-size:14px;color:var(--slate);margin-bottom:28px;line-height:1.6;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.form-input,.form-select{width:100%;padding:11px 14px;border:2px solid var(--border);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border .15s;background:white;}
+.form-input:focus,.form-select:focus{border-color:var(--cyan);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btn-apply{width:100%;padding:15px;background:var(--navy);color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;margin-top:8px;transition:all .2s;}
+.btn-apply:hover{background:#122847;transform:translateY(-1px);}
+.btn-apply:disabled{background:#CBD5E0;cursor:not-allowed;transform:none;}
+.form-success{text-align:center;padding:24px;color:var(--green);font-size:15px;font-weight:600;}
+/* COMPARISON */
+.comp-table{width:100%;border-collapse:collapse;margin-top:32px;}
+.comp-table th{background:var(--navy);color:white;padding:12px 16px;font-size:12px;font-weight:600;text-align:left;}
+.comp-table td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;}
+.comp-table tr:hover td{background:#F8FAFC;}
+.chk-y{color:var(--green);font-weight:700;}
+.chk-n{color:#CBD5E0;}
+/* FOOTER */
+footer{background:var(--navy);padding:32px;text-align:center;border-top:1px solid rgba(255,255,255,.04);}
+.footer-logo{font-size:24px;font-weight:800;color:white;font-family:'Barlow Condensed',sans-serif;margin-bottom:10px;}
+.footer-logo em{color:var(--cyan);font-style:normal;}
+.footer-leg{font-size:11px;color:#1A3050;line-height:1.7;margin-top:8px;}
+@media(max-width:768px){.flow-grid,.calc-results,.tier-grid,.tech-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.hero-stats{grid-template-columns:1fr 1fr;}.flow-arr{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://clearanceiq.io" class="logo">Clearance<em>IQ</em>™</a>
+  <span class="nav-tag">MSP & RPO Partner Program</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Charter Partner Program · September 2026</div>
+    <h1>Stop wasting <em>10 technical hours</em><br/>on non-binding CMMC scoping assessments.</h1>
+    <p class="hero-sub">Give your prospects a co-branded ClearanceIQ™ link. They safely baseline their real DoD SPRS score locally in their browser — zero whistleblower or regulatory exposure. You capture high-intent gap telemetry to immediately scope and sell your managed remediation packages.</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-n">20%</div><div class="stat-l">referral commission on every CERTIFY or DEFEND engagement you refer</div></div>
+      <div class="stat-card"><div class="stat-n">$0</div><div class="stat-l">cost to your clients — the assessment is always free and anonymous</div></div>
+      <div class="stat-card"><div class="stat-n">2 hrs</div><div class="stat-l">from completed assessment to scoped proposal using the gap telemetry</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS FOR PARTNERS -->
+<div class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-ey">How It Works</div>
+    <h2 class="section-h">Four Steps. Zero Engineering Hours.</h2>
+    <p class="section-s">ClearanceIQ replaces your non-billable scoping process with a high-quality, legally defensible gap report — before you've invested a single technical hour.</p>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-num">01</div>
+        <div class="flow-title">You Send the Link</div>
+        <div class="flow-desc">Share your co-branded ClearanceIQ assessment URL with any defense prospect. Takes 30 seconds. No setup. No technical configuration.</div>
+        <div class="flow-arr">→</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">02</div>
+        <div class="flow-title">They Self-Assess Safely</div>
+        <div class="flow-desc">Prospect completes the 110-control Level 2 gap analysis. All scoring runs client-side — no data transmitted, no corporate liability risk during discovery phase.</div>
+        <div class="flow-arr">→</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">03</div>
+        <div class="flow-title">You Get the Telemetry</div>
+        <div class="flow-desc">When they enter their email, you receive the score, SPRS estimate, and domain-level gap breakdown. Instant, pre-qualified proposal scope. No discovery calls needed.</div>
+        <div class="flow-arr">→</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-num">04</div>
+        <div class="flow-title">You Sell the Remediation</div>
+        <div class="flow-desc">Scope your managed remediation package against their actual gaps. Close at 3-5x your normal rate because the prospect already knows their problem and trusts the data.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVENUE CALCULATOR -->
+<div class="section" style="background:#F4F7FB;">
+  <div class="section-inner">
+    <div class="section-ey">Revenue Calculator</div>
+    <h2 class="section-h">What the Partner Program Earns You</h2>
+    <div class="calc-wrap">
+      <div class="calc-title">Drag to calculate your referral revenue</div>
+      <div class="calc-sub">Based on 20% referral commission on ClearanceIQ CERTIFY ($5,500 avg) and DEFEND ($12,000 avg/yr)</div>
+      <div class="calc-slider-wrap">
+        <div class="calc-label"><span>Defense clients referred per year</span><strong id="client-count">10 clients</strong></div>
+        <input type="range" min="1" max="50" value="10" id="client-slider" oninput="calcRevenue(this.value)"/>
+      </div>
+      <div class="calc-slider-wrap">
+        <div class="calc-label"><span>% who also purchase DEFEND (annual)</span><strong id="defend-pct">30%</strong></div>
+        <input type="range" min="0" max="100" value="30" id="defend-slider" oninput="calcRevenue(document.getElementById('client-slider').value)"/>
+      </div>
+      <div class="calc-results">
+        <div class="calc-box"><div class="calc-box-n" id="r-certify" style="color:#00C8F0;">$0</div><div class="calc-box-l">CERTIFY referral revenue (one-time)</div></div>
+        <div class="calc-box"><div class="calc-box-n" id="r-defend" style="color:#A78BFA;">$0</div><div class="calc-box-l">DEFEND referral revenue (annual recurring)</div></div>
+        <div class="calc-box"><div class="calc-box-n" id="r-total" style="color:#34D399;">$0</div><div class="calc-box-l">Total first-year partner revenue</div></div>
+      </div>
+      <div style="font-size:11px;color:#2A3848;text-align:center;margin-top:12px;">Plus 100% of your own implementation, remediation, and managed service fees — ClearanceIQ only earns on the certification layer</div>
+    </div>
+  </div>
+</div>
+
+<!-- TECHNICAL PROOF -->
+<div class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-ey">Technical Architecture</div>
+    <h2 class="section-h">Your Lead Engineer Will Want to Verify This</h2>
+    <p class="section-s">We built for technical scrutiny. Everything below is independently verifiable.</p>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-icon">🔒</div>
+        <div class="tech-title">Anonymous-First Architecture (Patent Pending)</div>
+        <div class="tech-desc">All assessment scoring runs as a compiled script in the browser sandbox. No payload containing answer telemetry or network architecture is POSTed to our infrastructure during the assessment sequence.</div>
+        <div class="code-block">
+          <div style="color:#607090;">// Verify in DevTools (F12) → Network tab</div>
+          <div><span style="color:#00C8F0;">answer_telemetry_posted</span>: <span style="color:#FF6B6B;">false</span></div>
+          <div><span style="color:#00C8F0;">data_leaves_browser</span>: <span style="color:#90D090;">"opt-in only"</span></div>
+          <div><span style="color:#00C8F0;">patent</span>: <span style="color:#90D090;">"US 64/110,963"</span></div>
+        </div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">✈️</div>
+        <div class="tech-title">AS9100/CMMC Crosswalk (Patent Pending)</div>
+        <div class="tech-desc">Patented methodology automatically maps AS9100 Rev D quality management controls to their NIST SP 800-171 equivalents. Aerospace-certified clients typically satisfy 40–70% of Level 2 controls through existing AS9100 documentation.</div>
+        <div class="code-block">
+          <div style="color:#607090;">// AS9100 → CMMC control mapping</div>
+          <div><span style="color:#00C8F0;">AS9100_8.4</span> → <span style="color:#90D090;">CMMC AC (Access Control)</span></div>
+          <div><span style="color:#00C8F0;">AS9100_7.5</span> → <span style="color:#90D090;">CMMC CM (Config Mgmt)</span></div>
+          <div><span style="color:#00C8F0;">patent</span>: <span style="color:#90D090;">"US 64/110,968"</span></div>
+        </div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🤖</div>
+        <div class="tech-title">AI Red Team Self-Certification (Patent Pending)</div>
+        <div class="tech-desc">Before the Affirming Official signs, an AI model adopts the persona of a DOJ Civil Cyber-Fraud investigator and adversarially challenges every certification claim. Produces a False Claims Risk Report before SPRS submission.</div>
+        <div class="code-block">
+          <div style="color:#607090;">// AI Red Team challenge per control</div>
+          <div><span style="color:#00C8F0;">persona</span>: <span style="color:#90D090;">"DOJ CCCI investigator"</span></div>
+          <div><span style="color:#00C8F0;">output</span>: <span style="color:#90D090;">"False Claims Risk Score"</span></div>
+          <div><span style="color:#00C8F0;">patent</span>: <span style="color:#90D090;">"US 64/111,830"</span></div>
+        </div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">📋</div>
+        <div class="tech-title">Level 2 Coverage — 110 Controls</div>
+        <div class="tech-desc">Unlike Level 1-only tools, ClearanceIQ CERTIFY covers all 110 NIST SP 800-171 Rev 2 requirements across all 14 control families. Produces a signed SSP, POA&M, and Affirming Official letter for SPRS submission.</div>
+        <div class="code-block">
+          <div style="color:#607090;">// Level 2 control coverage</div>
+          <div><span style="color:#00C8F0;">controls</span>: <span style="color:#A78BFA;">110</span> <span style="color:#607090;">// all NIST 800-171 Rev 2</span></div>
+          <div><span style="color:#00C8F0;">domains</span>: <span style="color:#A78BFA;">14</span> <span style="color:#607090;">// all CMMC L2 families</span></div>
+          <div><span style="color:#00C8F0;">output</span>: <span style="color:#90D090;">"SSP + POA&M + AO Letter"</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER TIERS -->
+<div class="section" style="background:#F4F7FB;">
+  <div class="section-inner">
+    <div class="section-ey">Partner Tiers</div>
+    <h2 class="section-h">Three Ways to Earn</h2>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Referral Partner</div>
+        <div class="tier-title">Send & Earn</div>
+        <div class="tier-earn">20% per referral</div>
+        <div class="tier-div"></div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Co-branded assessment link</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Gap telemetry on opt-in leads</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>$700–$1,600 per closed CERTIFY</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>$1,600–$4,000/yr per DEFEND</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>No exclusivity required</div>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name" style="color:var(--cyan);">Delivery Partner — Most Popular</div>
+        <div class="tier-title">Implement + Certify</div>
+        <div class="tier-earn">20% + 100% implementation</div>
+        <div class="tier-div"></div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Everything in Referral tier</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>You implement controls ($20–60K)</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Client uses ClearanceIQ to certify</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Total per client: $27K–$80K</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Listed on ClearanceIQ partner directory</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">White-Label Partner</div>
+        <div class="tier-title">Your Brand</div>
+        <div class="tier-earn">Custom revenue share</div>
+        <div class="tier-div"></div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>ClearanceIQ powers your branded platform</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>You own the client relationship</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Typically 60/40 split favoring partner</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>For RPOs with 20+ active defense clients</div>
+        <div class="tier-item"><span style="color:var(--green);font-weight:700;">✓</span>Setup fee waived for qualified partners</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPLICATION FORM -->
+<div class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="section-ey">Apply Now</div>
+    <h2 class="section-h" style="text-align:center;">Apply for the MSP Charter Partner Program</h2>
+    <p class="section-s" style="text-align:center;margin:0 auto 0;">Charter partners receive co-branded assessment links, gap telemetry access, partner directory listing, and priority support. Applications reviewed within 24 hours.</p>
+    <div class="app-wrap">
+      <div class="app-title">Charter Partner Application</div>
+      <div class="app-sub">Tell us about your practice. We review every application personally and respond within one business day.</div>
+      <form id="partner-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input class="form-input" type="text" id="fname" placeholder="Jane" required/>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input class="form-input" type="text" id="lname" placeholder="Smith" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Name *</label>
+          <input class="form-input" type="text" id="company" placeholder="Acme Cybersecurity LLC" required/>
+        </div>
+        <div class="form-group">
+          <label>Business Email *</label>
+          <input class="form-input" type="email" id="email" placeholder="jane@company.com" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Partner Type *</label>
+            <select class="form-select" id="ptype" required>
+              <option value="">Select type...</option>
+              <option>CMMC Registered Practitioner (RP)</option>
+              <option>Registered Practitioner Org (RPO)</option>
+              <option>Managed Security Service Provider (MSSP)</option>
+              <option>IT Managed Service Provider (MSP)</option>
+              <option>Cybersecurity Consulting Firm</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Defense Clients *</label>
+            <select class="form-select" id="clients" required>
+              <option value="">Select range...</option>
+              <option>1–5 defense clients</option>
+              <option>6–15 defense clients</option>
+              <option>16–30 defense clients</option>
+              <option>31–50 defense clients</option>
+              <option>50+ defense clients</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Primary service geography</label>
+          <input class="form-input" type="text" id="geo" placeholder="e.g. Southern California, Texas, National"/>
+        </div>
+        <div class="form-group">
+          <label>How did you hear about ClearanceIQ?</label>
+          <input class="form-input" type="text" id="source" placeholder="e.g. LinkedIn, referral, Farnborough..."/>
+        </div>
+        <button class="btn-apply" type="button" onclick="submitPartnerApp()" id="apply-btn">
+          Apply for Charter Partner Program →
+        </button>
+        <p style="font-size:11px;color:#94A3B8;text-align:center;margin-top:10px;">No fee. No exclusivity. Reviewed by Amrit Soni personally within 24 hours.</p>
+      </form>
+      <div id="form-success" class="form-success" style="display:none;">
+        ✓ Application received. Amrit Soni will be in touch within one business day.<br/>
+        <span style="font-size:13px;color:#64748B;">Questions? Call +1 (949) 385-1481 or email amrit@rapidscsolutions.com</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Clearance<em>IQ</em>™</div>
+  <div style="display:flex;gap:20px;justify-content:center;margin-bottom:10px;flex-wrap:wrap;">
+    <a href="https://clearanceiq.io" style="font-size:13px;color:#2A4060;text-decoration:none;">clearanceiq.io</a>
+    <a href="mailto:amrit@rapidscsolutions.com" style="font-size:13px;color:#2A4060;text-decoration:none;">amrit@rapidscsolutions.com</a>
+    <a href="tel:+19493851481" style="font-size:13px;color:#2A4060;text-decoration:none;">+1 (949) 385-1481</a>
+  </div>
+  <div class="footer-leg">
+    Technology protected by U.S. Patent Pending Applications 64/110,963 · 64/110,968 · 64/111,830<br/>
+    ClearanceIQ™ is a trademark of Rapid Supply Chain Solutions LLC · Not affiliated with the US DoD
+  </div>
+</footer>
+
+<script>
+const FORMSPREE = 'xwvgkjvk';
+
+function calcRevenue(clients) {
+  clients = parseInt(clients);
+  const defendPct = parseInt(document.getElementById('defend-slider').value) / 100;
+  document.getElementById('client-count').textContent = clients + ' client' + (clients > 1 ? 's' : '');
+  document.getElementById('defend-pct').textContent = Math.round(defendPct * 100) + '%';
+  const certifyRev = clients * 5500 * 0.20;
+  const defendRev = Math.round(clients * defendPct) * 12000 * 0.20;
+  const total = certifyRev + defendRev;
+  const fmt = n => '$' + Math.round(n).toLocaleString();
+  document.getElementById('r-certify').textContent = fmt(certifyRev);
+  document.getElementById('r-defend').textContent = fmt(defendRev) + '/yr';
+  document.getElementById('r-total').textContent = fmt(total);
+}
+calcRevenue(10);
+
+document.getElementById('defend-slider').addEventListener('input', function() {
+  calcRevenue(document.getElementById('client-slider').value);
+});
+
+function submitPartnerApp() {
+  const btn = document.getElementById('apply-btn');
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const ptype = document.getElementById('ptype').value;
+  const clients = document.getElementById('clients').value;
+  if (!fname || !lname || !email || !company || !ptype || !clients) {
+    alert('Please complete all required fields.');
+    return;
+  }
+  if (!email.includes('@')) { alert('Please enter a valid email.'); return; }
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/' + FORMSPREE, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'PARTNER_APPLICATION',
+      name: fname + ' ' + lname,
+      email: email,
+      company: company,
+      partner_type: ptype,
+      defense_clients: clients,
+      geography: document.getElementById('geo').value,
+      source: document.getElementById('source').value,
+      submitted_at: new Date().toISOString(),
+      _subject: 'Partner Application: ' + company + ' — ' + clients,
+      _replyto: email
+    })
+  }).then(() => {
+    document.getElementById('partner-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }).catch(() => {
+    btn.textContent = 'Apply for Charter Partner Program →';
+    btn.disabled = false;
+    alert('Submission error. Please email amrit@rapidscsolutions.com directly.');
+  });
+}
+</script>
+
+</body>
+</html>

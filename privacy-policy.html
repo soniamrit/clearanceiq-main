@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — ClearanceIQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --navy:#07101F; --navy2:#0C1A2E; --navy3:#112240; --steel:#1E3A5A;
+    --cyan:#00C8F0; --green:#00D68F; --amber:#F5A623; --red:#FF4D6A;
+    --white:#EEF4FF; --body:#8FA8C8; --muted:#4A6080; --border:#1A3050;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy); color:var(--white); font-family:'IBM Plex Mono',monospace; line-height:1.7;}
+  ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-track{background:var(--navy);}
+  ::-webkit-scrollbar-thumb{background:var(--steel); border-radius:3px;}
+  a{color:var(--cyan);}
+
+  nav{position:sticky; top:0; z-index:100; background:rgba(7,16,31,0.93); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border); padding:0 20px; height:56px;
+    display:flex; align-items:center; justify-content:space-between;}
+  .logo{display:flex; align-items:center; gap:10px;}
+  .logo-box{width:28px;height:28px;background:var(--cyan);border-radius:4px;display:flex;
+    align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--navy);
+    font-family:'Barlow Condensed',sans-serif;}
+  .logo-text{font-size:16px;font-weight:700;color:var(--white);
+    font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;}
+  .back-link{font-size:11px;color:var(--body);text-decoration:none;letter-spacing:1px;}
+
+  .hero{padding:48px 24px 32px; max-width:760px; margin:0 auto;}
+  .badge{display:inline-block;font-size:9px;letter-spacing:2px;padding:3px 10px;
+    border:1px solid var(--border);color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+  h1{font-size:clamp(28px,7vw,42px);font-weight:800;font-family:'Barlow Condensed',sans-serif;
+    line-height:1.1;margin-bottom:10px;}
+  .lead{font-size:14px;color:var(--body);line-height:1.8;max-width:600px;}
+  .meta{font-size:11px;color:var(--muted);margin-top:14px;}
+
+  .trust-strip{background:rgba(0,214,143,0.08); border:1px solid rgba(0,214,143,0.25);
+    border-left:3px solid var(--green); border-radius:4px; padding:14px 16px;
+    margin:24px auto 0; max-width:600px; font-size:12px; color:#80B898; line-height:1.7;}
+  .trust-strip strong{color:var(--green);}
+
+  .toc{max-width:760px;margin:32px auto;padding:18px 20px;background:var(--navy2);
+    border:1px solid var(--border);border-radius:6px;}
+  .toc-title{font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;
+    margin-bottom:12px;font-weight:700;}
+  .toc ol{list-style:none; columns:2; column-gap:24px;}
+  .toc li{font-size:12px;margin-bottom:8px;break-inside:avoid;}
+  .toc a{color:var(--body);text-decoration:none;}
+  .toc a:hover{color:var(--cyan);}
+  .toc-num{color:var(--cyan);font-weight:700;margin-right:6px;}
+
+  main{max-width:760px;margin:0 auto;padding:0 24px 80px;}
+  section{margin-bottom:40px; scroll-margin-top:72px;}
+  .sec-label{display:inline-block;font-size:10px;letter-spacing:2px;color:var(--navy);
+    background:var(--cyan);padding:3px 10px;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+  h2{font-size:22px;font-weight:700;font-family:'Barlow Condensed',sans-serif;
+    color:var(--white);margin-bottom:14px;letter-spacing:0.3px;}
+  h3{font-size:14px;font-weight:700;color:var(--white);margin:18px 0 8px;
+    font-family:'Barlow Condensed',sans-serif;}
+  p{font-size:13px;color:#B8C5D6;margin-bottom:12px;line-height:1.8;}
+  ul,ol.normal{margin:10px 0 14px 20px;}
+  li{font-size:13px;color:#B8C5D6;margin-bottom:7px;line-height:1.7;}
+  strong{color:var(--white);}
+
+  table{width:100%;border-collapse:collapse;font-size:12px;margin:14px 0;}
+  th{text-align:left;padding:9px 12px;background:#0C1828;color:var(--cyan);
+    font-size:10px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--border);}
+  td{padding:10px 12px;border-bottom:1px solid rgba(26,48,80,0.5);color:#B8C5D6;vertical-align:top;}
+
+  .callout{background:var(--navy2);border:1px solid var(--border);border-left:3px solid var(--cyan);
+    border-radius:0 4px 4px 0;padding:14px 16px;margin:14px 0;}
+  .callout.warn{border-left-color:var(--amber);}
+  .callout.green{border-left-color:var(--green);}
+  .callout p{margin-bottom:0;}
+  .callout strong.label{color:var(--cyan);display:block;font-size:11px;letter-spacing:1px;
+    text-transform:uppercase;margin-bottom:6px;}
+  .callout.warn strong.label{color:var(--amber);}
+  .callout.green strong.label{color:var(--green);}
+
+  .rights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:14px 0;}
+  .right-card{background:var(--navy2);border:1px solid var(--border);border-radius:4px;padding:14px;}
+  .right-card .icon{font-size:18px;margin-bottom:6px;}
+  .right-card h4{font-size:13px;color:var(--white);margin-bottom:5px;font-family:'Barlow Condensed',sans-serif;}
+  .right-card p{font-size:11px;color:var(--muted);margin:0;}
+
+  .contact-box{background:var(--navy2);border:1px solid var(--cyan);border-radius:6px;
+    padding:20px;text-align:center;margin-top:16px;}
+  .contact-box .email{font-size:18px;font-weight:700;color:var(--cyan);margin:8px 0;}
+
+  footer{border-top:1px solid var(--border);padding:24px;text-align:center;}
+  footer p{font-size:10px;color:var(--muted);margin-bottom:4px;}
+
+  @media print{ nav{display:none;} body{background:white;color:#111;} h1,h2,h3{color:#07101F;} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">C</div>
+    <div class="logo-text">ClearanceIQ</div>
+  </div>
+  <a href="#" class="back-link">← BACK TO SITE</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Legal · Effective June 2026</div>
+  <h1>Privacy Policy</h1>
+  <p class="lead">
+    This policy explains, in plain language, what data ClearanceIQ collects, why, how it is protected,
+    and the choices you have. We wrote it the way we'd want a vendor's privacy policy written to us —
+    short on legalese, specific on facts.
+  </p>
+  <div class="meta">Effective date: June 30, 2026 &nbsp;·&nbsp; Last updated: June 30, 2026 &nbsp;·&nbsp; Version 1.0</div>
+
+  <div class="trust-strip">
+    <strong>The short version:</strong> Our CMMC assessment is anonymous by default. We never share your
+    data with any government agency. We never sell your data. You can delete everything we have on you
+    by emailing privacy@clearanceiq.io.
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-title">On this page</div>
+  <ol>
+    <li><span class="toc-num">01</span><a href="#who-we-are">Who We Are</a></li>
+    <li><span class="toc-num">02</span><a href="#data-we-collect">Data We Collect</a></li>
+    <li><span class="toc-num">03</span><a href="#how-we-use">How We Use Your Data</a></li>
+    <li><span class="toc-num">04</span><a href="#legal-basis">Legal Basis for Processing</a></li>
+    <li><span class="toc-num">05</span><a href="#sharing">Who We Share Data With</a></li>
+    <li><span class="toc-num">06</span><a href="#cookies">Cookies & Tracking</a></li>
+    <li><span class="toc-num">07</span><a href="#security">How We Protect Your Data</a></li>
+    <li><span class="toc-num">08</span><a href="#retention">Data Retention</a></li>
+    <li><span class="toc-num">09</span><a href="#your-rights">Your Rights</a></li>
+    <li><span class="toc-num">10</span><a href="#ccpa">California Privacy Rights (CCPA/CPRA)</a></li>
+    <li><span class="toc-num">11</span><a href="#gdpr">European Privacy Rights (GDPR)</a></li>
+    <li><span class="toc-num">12</span><a href="#govt">Government & Law Enforcement Requests</a></li>
+    <li><span class="toc-num">13</span><a href="#children">Children's Privacy</a></li>
+    <li><span class="toc-num">14</span><a href="#changes">Changes to This Policy</a></li>
+    <li><span class="toc-num">15</span><a href="#contact">Contact Us</a></li>
+  </ol>
+</div>
+
+<main>
+
+  <section id="who-we-are">
+    <span class="sec-label">01</span>
+    <h2>Who We Are</h2>
+    <p>
+      ClearanceIQ is a project of Rapid SC Solutions ("ClearanceIQ," "we," "us," or "our"), providing
+      a free cybersecurity compliance assessment tool and related advisory services for small and
+      mid-size aerospace and defense companies. This policy applies to clearanceiq.io and any
+      subdomains, the embedded assessment tool, and any related services we offer.
+    </p>
+    <div class="callout">
+      <strong class="label">Not a government entity</strong>
+      <p>ClearanceIQ is an independent, privately operated company. We are not affiliated with, operated
+      by, or acting on behalf of the U.S. Department of Defense, DCSA, DHS, or any other government
+      agency. Use of our tools creates no government record.</p>
+    </div>
+  </section>
+
+  <section id="data-we-collect">
+    <span class="sec-label">02</span>
+    <h2>Data We Collect</h2>
+    <p>We separate what we collect into three tiers, based on what action you take on the site.</p>
+
+    <h3>Tier 1 — Anonymous visitors (most users)</h3>
+    <p>If you visit the site and take the CMMC assessment without entering your email, we collect:</p>
+    <table>
+      <tr><th>Data</th><th>Source</th><th>Purpose</th></tr>
+      <tr><td>Page views, time on site, device type, browser, approximate location (country/region)</td><td>Google Analytics</td><td>Understand traffic and improve the site</td></tr>
+      <tr><td>Session behavior — clicks, scrolling, navigation</td><td>Microsoft Clarity</td><td>Identify confusing steps in the assessment</td></tr>
+      <tr><td>Your overall assessment score and risk category (e.g. "67% — Moderate Risk")</td><td>Calculated in your browser, then logged anonymously</td><td>Aggregate market research — never linked to your identity</td></tr>
+    </table>
+    <p><strong>We do not collect or store your individual question-by-question answers.</strong> Scoring happens entirely in your browser using JavaScript; only the final score and risk bucket are logged, and never alongside any identifying information.</p>
+
+    <h3>Tier 2 — If you submit your email</h3>
+    <p>If you choose to enter your email to receive a PDF copy of your results, we additionally collect:</p>
+    <table>
+      <tr><th>Data</th><th>Purpose</th></tr>
+      <tr><td>Email address</td><td>To send your PDF report and, if you opt in, occasional compliance updates</td></tr>
+      <tr><td>Your assessment score and risk category</td><td>To personalize the report we send you</td></tr>
+      <tr><td>Self-reported role, sector, and company size (if provided)</td><td>To tailor follow-up guidance to your situation</td></tr>
+    </table>
+
+    <h3>Tier 3 — If you book a consultation or become a client</h3>
+    <p>If you schedule a free compliance review or engage our paid services, we additionally collect
+    your name, company name, phone number, and any information you choose to share during that
+    engagement, including compliance documentation if you become a client. Client engagement data is
+    governed by a separate services agreement and is subject to additional confidentiality protections
+    described in that agreement.</p>
+  </section>
+
+  <section id="how-we-use">
+    <span class="sec-label">03</span>
+    <h2>How We Use Your Data</h2>
+    <ul>
+      <li>To calculate and display your CMMC readiness score (performed in your browser — not on our servers)</li>
+      <li>To send you a PDF copy of your assessment results, if requested</li>
+      <li>To follow up regarding a free compliance review you booked</li>
+      <li>To improve the assessment tool based on aggregate, anonymized usage patterns</li>
+      <li>To understand market-wide compliance trends across the aerospace and defense sector (using only anonymous score data, never tied to identity)</li>
+      <li>To deliver services you have contracted us to provide</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <div class="callout warn">
+      <strong class="label">What we never do</strong>
+      <p>We never use your data to train third-party AI models without consent, never sell your data to
+      data brokers, never share your assessment answers with your prime contractor or any government
+      body, and never use your data for advertising or retargeting.</p>
+    </div>
+  </section>
+
+  <section id="legal-basis">
+    <span class="sec-label">04</span>
+    <h2>Legal Basis for Processing</h2>
+    <p>For visitors in jurisdictions that require a stated legal basis for data processing (such as the EU/UK under GDPR), we rely on:</p>
+    <ul>
+      <li><strong>Consent</strong> — for analytics cookies (Google Analytics, Microsoft Clarity), which only load after you accept our cookie banner</li>
+      <li><strong>Consent</strong> — for email collection, which requires you to affirmatively enter your email and accept our stated terms at the point of collection</li>
+      <li><strong>Legitimate interest</strong> — for anonymous, aggregate score data used to improve the product and understand market trends, which contains no personal data</li>
+      <li><strong>Contract performance</strong> — for data collected in the course of delivering paid services to clients</li>
+    </ul>
+  </section>
+
+  <section id="sharing">
+    <span class="sec-label">05</span>
+    <h2>Who We Share Data With</h2>
+    <p>We do not sell, rent, or trade your personal data. We share limited data only with the following categories of service providers, each bound by their own privacy and security obligations:</p>
+    <table>
+      <tr><th>Provider</th><th>What they receive</th><th>Purpose</th></tr>
+      <tr><td>Google Analytics</td><td>Anonymized visitor and usage data (IP anonymized)</td><td>Website traffic analytics</td></tr>
+      <tr><td>Microsoft Clarity</td><td>Anonymized session recordings and click data</td><td>Usability analysis</td></tr>
+      <tr><td>Formspree</td><td>Email address and score data you submit</td><td>Form processing and lead routing</td></tr>
+      <tr><td>Email delivery provider (e.g. Resend)</td><td>Email address</td><td>Sending your PDF report</td></tr>
+      <tr><td>Hosting provider (e.g. Netlify, Supabase)</td><td>All data described above</td><td>Infrastructure to run the website and store data securely</td></tr>
+    </table>
+    <p>We may also disclose data if required by law, such as in response to a valid subpoena or court
+    order — see Section 12 for specific commitments regarding government requests.</p>
+  </section>
+
+  <section id="cookies">
+    <span class="sec-label">06</span>
+    <h2>Cookies & Tracking</h2>
+    <p>
+      We use a minimal set of cookies, limited to analytics. A cookie consent banner appears on your
+      first visit; analytics cookies are not set until you click "Accept." Clicking "Reject" means
+      no analytics cookies are placed, and the assessment tool continues to function identically.
+    </p>
+    <table>
+      <tr><th>Category</th><th>Examples</th><th>Retention</th></tr>
+      <tr><td>Strictly necessary</td><td>None currently in use</td><td>N/A</td></tr>
+      <tr><td>Analytics — Google Analytics</td><td>_ga, _ga_*, _gid</td><td>Up to 13 months</td></tr>
+      <tr><td>Analytics — Microsoft Clarity</td><td>_clck, _clsk, CLID, ANONCHK</td><td>Up to 1 year</td></tr>
+    </table>
+    <p>We honor browser "Do Not Track" signals — if enabled, analytics will not load even if you click
+    Accept. You can change your cookie choice at any time using the "Cookie Settings" link in the site
+    footer.</p>
+  </section>
+
+  <section id="security">
+    <span class="sec-label">07</span>
+    <h2>How We Protect Your Data</h2>
+    <ul>
+      <li>Email addresses are encrypted at rest using AES-256 encryption</li>
+      <li>All data in transit is protected with TLS 1.3 encryption</li>
+      <li>Access to systems containing personal data is restricted to named individuals on a need-to-know basis</li>
+      <li>We maintain an audit log of access to lead and client data</li>
+      <li>Assessment scoring happens client-side in your browser — your specific answers are never transmitted to or stored on our servers</li>
+    </ul>
+    <p>No system is perfectly secure, and we cannot guarantee absolute security. If we become aware of
+    a data breach affecting your personal information, we will notify you in accordance with applicable law.</p>
+  </section>
+
+  <section id="retention">
+    <span class="sec-label">08</span>
+    <h2>Data Retention</h2>
+    <table>
+      <tr><th>Data type</th><th>Retention period</th></tr>
+      <tr><td>Anonymous assessment scores (no PII)</td><td>Retained indefinitely for aggregate market research</td></tr>
+      <tr><td>Email address and lead data</td><td>24 months from last interaction, or until you request deletion, whichever is sooner</td></tr>
+      <tr><td>Client engagement data</td><td>Per the retention terms in your services agreement, typically 7 years for compliance and audit purposes</td></tr>
+      <tr><td>Analytics cookie data</td><td>13 months (Google Analytics) / 12 months (Microsoft Clarity), per provider default settings</td></tr>
+    </table>
+  </section>
+
+  <section id="your-rights">
+    <span class="sec-label">09</span>
+    <h2>Your Rights</h2>
+    <p>Regardless of where you live, we extend the following rights to anyone whose data we hold:</p>
+    <div class="rights-grid">
+      <div class="right-card"><div class="icon">👁</div><h4>Access</h4><p>Request a copy of what data we hold about you</p></div>
+      <div class="right-card"><div class="icon">✏️</div><h4>Correction</h4><p>Ask us to fix inaccurate information</p></div>
+      <div class="right-card"><div class="icon">🗑</div><h4>Deletion</h4><p>Request permanent removal of your data</p></div>
+      <div class="right-card"><div class="icon">📦</div><h4>Portability</h4><p>Receive your data in a portable format</p></div>
+      <div class="right-card"><div class="icon">🚫</div><h4>Opt-out</h4><p>Unsubscribe from emails or analytics at any time</p></div>
+      <div class="right-card"><div class="icon">⚖️</div><h4>Object</h4><p>Object to certain types of processing</p></div>
+    </div>
+    <p>To exercise any of these rights, email <strong>privacy@clearanceiq.io</strong>. We respond to
+    all requests within 30 days, and typically within 24–48 hours for simple deletion requests.</p>
+  </section>
+
+  <section id="ccpa">
+    <span class="sec-label">10</span>
+    <h2>California Privacy Rights (CCPA/CPRA)</h2>
+    <p>If you are a California resident, the California Consumer Privacy Act (as amended by the CPRA)
+    gives you additional specific rights:</p>
+    <ul>
+      <li>The right to know what personal information we collect, use, and disclose</li>
+      <li>The right to delete personal information we have collected from you</li>
+      <li>The right to correct inaccurate personal information</li>
+      <li>The right to opt out of the sale or sharing of personal information — <strong>we do not sell or share personal information</strong>, so there is nothing to opt out of</li>
+      <li>The right to limit use of sensitive personal information</li>
+      <li>The right to non-discrimination for exercising any of these rights</li>
+    </ul>
+    <p>To submit a CCPA request, email privacy@clearanceiq.io with the subject line "California Privacy
+    Request." We will verify your identity using your email address before fulfilling the request.</p>
+  </section>
+
+  <section id="gdpr">
+    <span class="sec-label">11</span>
+    <h2>European Privacy Rights (GDPR)</h2>
+    <p>If you are located in the European Economic Area or United Kingdom, the General Data Protection
+    Regulation gives you the rights described in Section 9 above, plus:</p>
+    <ul>
+      <li>The right to lodge a complaint with your local supervisory authority</li>
+      <li>The right to withdraw consent at any time, without affecting the lawfulness of processing before withdrawal</li>
+      <li>The right to restrict processing under certain circumstances</li>
+    </ul>
+    <p>We do not currently maintain an EU representative, as our services are primarily directed at the
+    United States aerospace and defense supply chain. If this changes, this policy will be updated
+    accordingly.</p>
+  </section>
+
+  <section id="govt">
+    <span class="sec-label">12</span>
+    <h2>Government & Law Enforcement Requests</h2>
+    <div class="callout green">
+      <strong class="label">Our commitment</strong>
+      <p>We do not proactively share any data with the Department of Defense, DCSA, or any other
+      government agency. We will only disclose data in response to a legally valid, binding request
+      (such as a subpoena, warrant, or court order), and only to the extent legally required. We do not
+      promise that disclosure will never occur in such circumstances, as we must comply with valid
+      legal process — but we commit to disclosing the minimum data necessary to satisfy any such
+      request.</p>
+    </div>
+  </section>
+
+  <section id="children">
+    <span class="sec-label">13</span>
+    <h2>Children's Privacy</h2>
+    <p>ClearanceIQ is a business-to-business service intended for use by professionals in the aerospace
+    and defense industry. Our services are not directed at, and we do not knowingly collect personal
+    information from, anyone under the age of 18. If we learn we have inadvertently collected such
+    information, we will delete it promptly.</p>
+  </section>
+
+  <section id="changes">
+    <span class="sec-label">14</span>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy from time to time as our services evolve or to reflect changes in
+    applicable law. Material changes will be reflected by an updated "Last updated" date at the top of
+    this page. We encourage you to review this policy periodically.</p>
+  </section>
+
+  <section id="contact">
+    <span class="sec-label">15</span>
+    <h2>Contact Us</h2>
+    <p>For any questions about this policy, to exercise your privacy rights, or to request deletion of
+    your data, reach out using the details below.</p>
+    <div class="contact-box">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:1px;">PRIVACY INQUIRIES</div>
+      <div class="email">privacy@clearanceiq.io</div>
+      <div style="font-size:11px;color:var(--muted);">We respond within 24–48 hours for deletion requests, within 30 days for all others</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 ClearanceIQ — A Project of Rapid SC Solutions</p>
+  <p>This policy is provided for informational purposes and does not constitute legal advice.</p>
+</footer>
+
+</body>
+</html>
