@@ -944,14 +944,10 @@ function Results({ans,onBack}){
             </div>
             <button style={{background:'#7C3AED',color:'white',border:'none',padding:'14px 36px',borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)'}}
               onClick={()=>{
+                const _t=window.open('https://certify.clearanceiq.io','_blank');
+                if(!_t)window.location.href='https://certify.clearanceiq.io';
                 if(window.trackEvent)window.trackEvent('doc_999_clicked',{score_pct:pct});
-                const _tab = window.open('https://certify.clearanceiq.io','_blank');
-                if(!_tab) window.location.href=window.CERTIFY_URL;
-                const _certTab = window.open(window.CERTIFY_URL,'_blank');
-                if(!_certTab) window.location.href=window.CERTIFY_URL;
-                fetch('https://formspree.io/f/'+window.FORMSPREE_LEADS,{method:'POST',headers:{'Content-Type':'application/json'},
-                  body:JSON.stringify({type:'DOC_999',score_pct:pct,sprs:Math.round(-203+(pct/100)*313),_subject:'$999 Request — SPRS '+Math.round(-203+(pct/100)*313)})
-                }).catch(()=>{});
+                fetch('https://formspree.io/f/'+(window.FORMSPREE_LEADS||'xwvgkjvk'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'DOC_999',score_pct:pct,_subject:'$999 Request'})}).catch(()=>{});
               }}>
               Generate My SSP &amp; POA&M — $999 →
             </button>
