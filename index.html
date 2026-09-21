@@ -460,7 +460,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
           </div>
           <div className="hctas">
             <button className="btn-p" onClick={onStart}>Start Free Anonymous Assessment →</button>
-            <button className="btn-s" onClick={()=>window.open('https://certify.clearanceiq.io','_blank')}>Schedule Expert Call</button>
+            <button className="btn-s" onClick={()=>window.open('https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review','_blank')}>Schedule Expert Call</button>
           </div>
           <div className="htrust">
             <div className="htrust-i">No company name or email needed to start</div>
@@ -794,7 +794,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
           <p className="sec-s" style={{textAlign:'center',margin:'0 auto 40px'}}>Phase 2 is paused — but your self-assessment obligations are not. Know your real score before a contracting officer or DOJ investigator does.</p>
           <div style={{display:'flex',gap:14,flexWrap:'wrap',justifyContent:'center'}}>
             <button className="btn-p" onClick={onStart} style={{fontSize:18,padding:'18px 44px'}}>Start Free Anonymous Assessment →</button>
-            <button className="btn-s" style={{color:'#070F1E',borderColor:'#E2E8F0',fontSize:18,padding:'18px 32px'}} onClick={()=>window.open('https://certify.clearanceiq.io','_blank')}>Schedule Expert Call</button>
+            <button className="btn-s" style={{color:'#070F1E',borderColor:'#E2E8F0',fontSize:18,padding:'18px 32px'}} onClick={()=>window.open('https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review','_blank')}>Schedule Expert Call</button>
           </div>
         </div>
       </div>
@@ -935,7 +935,7 @@ function Results({ans,onBack}){
           </div>
 
           {/* $999 doc generation — directly below legal warning */}
-          <div style={{background:'linear-gradient(135deg,#1A0A2E,#0D1B35)',border:'2px solid #5B21B6',borderRadius:14,padding:22,marginTop:14,textAlign:'center'}}>
+          <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer" style={{display:'block',background:'linear-gradient(135deg,#1A0A2E,#0D1B35)',border:'2px solid #5B21B6',borderRadius:14,padding:22,marginTop:14,textAlign:'center',textDecoration:'none',cursor:'pointer'}}>
             <div style={{fontSize:11,fontWeight:700,color:'#A78BFA',letterSpacing:1.5,textTransform:'uppercase',marginBottom:6}}>⚡ Fastest Path to a Defensible SPRS Submission</div>
             <div style={{fontSize:20,fontWeight:800,color:'white',fontFamily:"'Barlow Condensed',sans-serif",marginBottom:8}}>Generate SSP &amp; POA&M Documents Instantly</div>
             <div style={{fontSize:12,color:'#8B7EC8',marginBottom:14}}>Consultants charge <span style={{color:'#F87171',textDecoration:'line-through'}}>$5,000+</span> · ClearanceIQ generates from your assessment in 2 hours</div>
@@ -950,7 +950,7 @@ function Results({ans,onBack}){
               Generate My SSP &amp; POA&amp;M — $999 →
             </a>
             <div style={{fontSize:10,color:'#4C3875',marginTop:6}}>Delivered within 2 business hours · Based on your actual assessment responses</div>
-          </div>
+          </a>
         </div>
 
         <div className="nsh">What would you like to do next?</div>
@@ -1061,7 +1061,7 @@ function App(){
           <a onClick={()=>window.open('/privacy-policy.html','_blank')}>Privacy Policy</a>
           <a onClick={()=>{try{localStorage.removeItem('ciq_consent')}catch(e){}window.location.reload();}}>Cookie Settings</a>
           <a href="mailto:hello@clearanceiq.io">hello@clearanceiq.io</a>
-          <a onClick={()=>window.open('https://certify.clearanceiq.io','_blank')}>Book Expert Call</a>
+          <a href="https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review" target="_blank" rel="noopener">Book Expert Call</a>
         </div>
         <div className="fleg">
           2026 ClearanceIQ™ · ClearanceIQ Inc.<br/>
@@ -1103,6 +1103,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
     var hasResults = text.indexOf('readiness') > -1 && text.indexOf('SPRS Score') > -1;
     fab.style.display = hasResults ? 'block' : 'none';
   }, 800);
+
+  
 
 })();
 </script>
