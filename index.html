@@ -750,7 +750,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button style={{marginTop:8,padding:'12px 20px',background:'#00C8F0',color:'#070F1E',border:'none',borderRadius:8,fontSize:15,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif'}}
-                onClick={()=>{const _t=window.open('https://certify.clearanceiq.io','_blank');if(!_t)window.location.href='https://certify.clearanceiq.io';}}>
+                onClick={()=>{const _t=window.open('https://certify.clearanceiq.io','_blank');if(!_t)window.open('https://certify.clearanceiq.io','_blank');}}>
                 Start Free · Decide Later →
               </button>
             </div>
@@ -942,9 +942,12 @@ function Results({ans,onBack}){
             <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap',marginBottom:14}}>
               {['SSP','POA&M','SPRS Letter','Evidence Register'].map(d=>(<div key={d} style={{fontSize:11,color:'#A78BFA',display:'flex',gap:4}}><span style={{color:'#7C3AED'}}>✓</span>{d}</div>))}
             </div>
-           <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener"
-              style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',textDecoration:'none'}}>
-              Generate My SSP &amp; POA&M — $999 →
+            <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
+              style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',
+              borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',
+              fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',
+              textDecoration:'none',marginBottom:0}}>
+              Generate My SSP &amp; POA&amp;M — $999 →
             </a>
             <div style={{fontSize:10,color:'#4C3875',marginTop:6}}>Delivered within 2 business hours · Based on your actual assessment responses</div>
           </div>
@@ -962,9 +965,9 @@ function Results({ans,onBack}){
             <div className="ccd">Complete all 110 NIST 800-171 controls with guided questions. See your exact SPRS score and generate your SSP &amp; POA&M when ready.</div>
             <div style={{fontSize:11,fontWeight:700,color:'#7C3AED',marginBottom:4}}>✓ Assessment free · Documents from $999</div>
             <button className="cbtn-c" style={{background:'#7C3AED'}}
-              onClick={()=>{window.location.href='https://certify.clearanceiq.io';
+              onClick={()=>{
                 const _t = window.open('https://certify.clearanceiq.io','_blank');
-                if(!_t) window.location.href='https://certify.clearanceiq.io';
+                if(!_t) window.open('https://certify.clearanceiq.io','_blank');
                 if(window.trackEvent) window.trackEvent('certify_clicked',{score_bucket:level.label});
               }}>
               Begin 110-Control Assessment →
@@ -1073,5 +1076,46 @@ function App(){
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
+
+<!-- STICKY CTA — appears after scroll, always clickable above all elements -->
+<div id="ciq-sticky" style="display:none;position:fixed;bottom:0;left:0;right:0;
+  background:linear-gradient(135deg,#5B21B6,#7C3AED);padding:14px 24px;
+  text-align:center;z-index:2147483647;box-shadow:0 -4px 24px rgba(124,58,237,0.6);
+  align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+  <span style="color:rgba(255,255,255,0.8);font-size:13px;font-family:Inter,sans-serif;">
+    Ready to generate your SSP &amp; POA&amp;M?
+  </span>
+  <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
+     style="background:white;color:#5B21B6;padding:10px 24px;border-radius:8px;
+     font-size:14px;font-weight:700;text-decoration:none;font-family:Inter,sans-serif;
+     white-space:nowrap;">
+    Generate Documents — $999 →
+  </a>
+  <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
+     style="color:rgba(255,255,255,0.7);padding:10px 16px;border-radius:8px;
+     font-size:13px;font-weight:600;text-decoration:none;font-family:Inter,sans-serif;
+     border:1px solid rgba(255,255,255,0.3);white-space:nowrap;">
+    Start Free Assessment →
+  </a>
+  <span onclick="document.getElementById('ciq-sticky').style.display='none';
+                 sessionStorage.setItem('ciq-sticky-closed','1');"
+        style="color:rgba(255,255,255,0.4);cursor:pointer;font-size:18px;
+        line-height:1;padding:4px 8px;">✕</span>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('ciq-sticky-closed')) return;
+  var el = document.getElementById('ciq-sticky');
+  var shown = false;
+  window.addEventListener('scroll', function(){
+    if(!el) return;
+    if(window.scrollY > 300 && !shown){
+      el.style.display = 'flex';
+      shown = true;
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
