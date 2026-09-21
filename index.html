@@ -750,8 +750,8 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button style={{marginTop:8,padding:'12px 20px',background:'#00C8F0',color:'#070F1E',border:'none',borderRadius:8,fontSize:15,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif'}}
-                onClick={()=>window.open('https://certify.clearanceiq.io','_blank')}>
-                Book a Consultation →
+                onClick={()=>{const _t=window.open('https://certify.clearanceiq.io','_blank');if(!_t)window.location.href='https://certify.clearanceiq.io';}}>
+                Start Free · Decide Later →
               </button>
             </div>
 
@@ -771,8 +771,12 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button style={{marginTop:8,padding:'12px 20px',background:'#5B21B6',color:'white',border:'none',borderRadius:8,fontSize:15,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif'}}
-                onClick={()=>window.open('https://certify.clearanceiq.io','_blank')}>
-                Book a Consultation →
+                onClick={()=>{
+                  const _ct=window.open('https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review','_blank');
+                  if(!_ct)window.location.href='https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review';
+                  if(window.trackEvent)window.trackEvent('cta_defend_products',{});
+                }}>
+                Schedule a Call →
               </button>
             </div>
 
