@@ -967,7 +967,7 @@ function Results({ans,onBack}){
             <div className="ccd">Complete all 110 NIST 800-171 controls with guided questions. See your exact SPRS score and generate your SSP &amp; POA&M when ready.</div>
             <div style={{fontSize:11,fontWeight:700,color:'#7C3AED',marginBottom:4}}>✓ Assessment free · Documents from $999</div>
             <button className="cbtn-c" style={{background:'#7C3AED'}}
-              onClick={()=>{
+              onClick={()=>{window.location.href='https://certify.clearanceiq.io';
                 const _t = window.open('https://certify.clearanceiq.io','_blank');
                 if(!_t) window.location.href='https://certify.clearanceiq.io';
                 if(window.trackEvent) window.trackEvent('certify_clicked',{score_bucket:level.label});
