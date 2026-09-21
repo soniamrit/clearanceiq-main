@@ -1104,28 +1104,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
     fab.style.display = hasResults ? 'block' : 'none';
   }, 800);
 
-  // Capture-phase interceptor — fires before React, catches clicks
-  // on elements that might be covered or have broken handlers
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    // Walk up 8 levels looking for certify-related content
-    for(var i = 0; i < 8; i++){
-      if(!t || t === document) break;
-      var txt = (t.textContent || t.innerText || '').trim();
-      var isSSPBtn = txt.indexOf('Generate My SSP') > -1
-                  || txt.indexOf('POA&M — $999') > -1
-                  || txt.indexOf('POA&M — $999') > -1;
-      if(isSSPBtn){
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        window.open('https://certify.clearanceiq.io','_blank')
-          || (window.location.href = 'https://certify.clearanceiq.io');
-        return;
-      }
-      t = t.parentElement;
-    }
-  }, true); // true = capture phase — fires before any other handler
-
 })();
 </script>
 
