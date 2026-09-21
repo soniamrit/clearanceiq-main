@@ -942,15 +942,10 @@ function Results({ans,onBack}){
             <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap',marginBottom:14}}>
               {['SSP','POA&M','SPRS Letter','Evidence Register'].map(d=>(<div key={d} style={{fontSize:11,color:'#A78BFA',display:'flex',gap:4}}><span style={{color:'#7C3AED'}}>✓</span>{d}</div>))}
             </div>
-            <button style={{background:'#7C3AED',color:'white',border:'none',padding:'14px 36px',borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)'}}
-              onClick={()=>{
-                const _t=window.open('https://certify.clearanceiq.io','_blank');
-                if(!_t)window.location.href='https://certify.clearanceiq.io';
-                if(window.trackEvent)window.trackEvent('doc_999_clicked',{score_pct:pct});
-                fetch('https://formspree.io/f/'+(window.FORMSPREE_LEADS||'xwvgkjvk'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'DOC_999',score_pct:pct,_subject:'$999 Request'})}).catch(()=>{});
-              }}>
+           <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener"
+              style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',textDecoration:'none'}}>
               Generate My SSP &amp; POA&M — $999 →
-            </button>
+            </a>
             <div style={{fontSize:10,color:'#4C3875',marginTop:6}}>Delivered within 2 business hours · Based on your actual assessment responses</div>
           </div>
         </div>
