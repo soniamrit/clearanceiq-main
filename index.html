@@ -946,7 +946,9 @@ function Results({ans,onBack}){
               onClick={()=>{
                 const _t=window.open('https://certify.clearanceiq.io','_blank');
                 if(!_t)window.location.href='https://certify.clearanceiq.io';
-                if(window.trackEvent)window.trackEvent('doc_999_clicked',{score_pct:pct});
+              if(window.trackEvent)window.trackEvent('doc_999_clicked',{score_pct:pct});
+                const _t=window.open('https://certify.clearanceiq.io','_blank');
+                if(!_t)window.location.href='https://certify.clearanceiq.io';
                 fetch('https://formspree.io/f/'+(window.FORMSPREE_LEADS||'xwvgkjvk'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'DOC_999',score_pct:pct,_subject:'$999 Request'})}).catch(()=>{});
               }}>
               Generate My SSP &amp; POA&M — $999 →
