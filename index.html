@@ -1077,43 +1077,55 @@ function App(){
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 
-<!-- STICKY CTA — appears after scroll, always clickable above all elements -->
-<div id="ciq-sticky" style="display:none;position:fixed;bottom:0;left:0;right:0;
-  background:linear-gradient(135deg,#5B21B6,#7C3AED);padding:14px 24px;
-  text-align:center;z-index:2147483647;box-shadow:0 -4px 24px rgba(124,58,237,0.6);
-  align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
-  <span style="color:rgba(255,255,255,0.8);font-size:13px;font-family:Inter,sans-serif;">
-    Ready to generate your SSP &amp; POA&amp;M?
-  </span>
-  <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
-     style="background:white;color:#5B21B6;padding:10px 24px;border-radius:8px;
-     font-size:14px;font-weight:700;text-decoration:none;font-family:Inter,sans-serif;
-     white-space:nowrap;">
-    Generate Documents — $999 →
-  </a>
-  <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
-     style="color:rgba(255,255,255,0.7);padding:10px 16px;border-radius:8px;
-     font-size:13px;font-weight:600;text-decoration:none;font-family:Inter,sans-serif;
-     border:1px solid rgba(255,255,255,0.3);white-space:nowrap;">
-    Start Free Assessment →
-  </a>
-  <span onclick="document.getElementById('ciq-sticky').style.display='none';
-                 sessionStorage.setItem('ciq-sticky-closed','1');"
-        style="color:rgba(255,255,255,0.4);cursor:pointer;font-size:18px;
-        line-height:1;padding:4px 8px;">✕</span>
-</div>
+
+<!-- FLOATING CTA — appears only when assessment results are shown -->
+<a id="ciq-fab" href="https://certify.clearanceiq.io" target="_blank"
+   rel="noopener noreferrer"
+   style="display:none;position:fixed;bottom:24px;right:24px;
+          background:#7C3AED;color:white;padding:14px 22px;
+          border-radius:50px;font-size:14px;font-weight:700;
+          text-decoration:none;z-index:2147483647;
+          box-shadow:0 4px 24px rgba(124,58,237,0.7);
+          font-family:Inter,sans-serif;white-space:nowrap;
+          border:2px solid rgba(255,255,255,0.2);
+          pointer-events:auto;">
+  📄 Get My SSP &amp; POA&amp;M →
+</a>
+
+<!-- CAPTURE-PHASE CLICK INTERCEPTOR — catches clicks on covered elements -->
 <script>
 (function(){
-  if(sessionStorage.getItem('ciq-sticky-closed')) return;
-  var el = document.getElementById('ciq-sticky');
-  var shown = false;
-  window.addEventListener('scroll', function(){
-    if(!el) return;
-    if(window.scrollY > 300 && !shown){
-      el.style.display = 'flex';
-      shown = true;
+  // Show floating button only when results are visible
+  setInterval(function(){
+    var fab = document.getElementById('ciq-fab');
+    if(!fab) return;
+    var text = (document.body && document.body.innerText) || '';
+    var hasResults = text.indexOf('readiness') > -1 && text.indexOf('SPRS Score') > -1;
+    fab.style.display = hasResults ? 'block' : 'none';
+  }, 800);
+
+  // Capture-phase interceptor — fires before React, catches clicks
+  // on elements that might be covered or have broken handlers
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    // Walk up 8 levels looking for certify-related content
+    for(var i = 0; i < 8; i++){
+      if(!t || t === document) break;
+      var txt = (t.textContent || t.innerText || '').trim();
+      var isSSPBtn = txt.indexOf('Generate My SSP') > -1
+                  || txt.indexOf('POA&M — $999') > -1
+                  || txt.indexOf('POA&M — $999') > -1;
+      if(isSSPBtn){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        window.open('https://certify.clearanceiq.io','_blank')
+          || (window.location.href = 'https://certify.clearanceiq.io');
+        return;
+      }
+      t = t.parentElement;
     }
-  });
+  }, true); // true = capture phase — fires before any other handler
+
 })();
 </script>
 
