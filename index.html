@@ -226,6 +226,18 @@ footer{background:#070F1E;padding:40px 32px;text-align:center;border-top:1px sol
   nav{padding:0 16px;}
 }
 </style>
+<style>
+#ssp-btn, #ssp-btn * {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+#ssp-btn {
+  display: block !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  text-decoration: none !important;
+}
+</style>
 </head>
 <body>
 <div id="root"></div>
@@ -935,22 +947,22 @@ function Results({ans,onBack}){
           </div>
 
           {/* $999 doc generation — directly below legal warning */}
-          <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer" style={{display:'block',background:'linear-gradient(135deg,#1A0A2E,#0D1B35)',border:'2px solid #5B21B6',borderRadius:14,padding:22,marginTop:14,textAlign:'center',textDecoration:'none',cursor:'pointer'}}>
+          <div style={{background:'linear-gradient(135deg,#1A0A2E,#0D1B35)',border:'2px solid #5B21B6',borderRadius:14,padding:22,marginTop:14,textAlign:'center'}}>
             <div style={{fontSize:11,fontWeight:700,color:'#A78BFA',letterSpacing:1.5,textTransform:'uppercase',marginBottom:6}}>⚡ Fastest Path to a Defensible SPRS Submission</div>
             <div style={{fontSize:20,fontWeight:800,color:'white',fontFamily:"'Barlow Condensed',sans-serif",marginBottom:8}}>Generate SSP &amp; POA&M Documents Instantly</div>
             <div style={{fontSize:12,color:'#8B7EC8',marginBottom:14}}>Consultants charge <span style={{color:'#F87171',textDecoration:'line-through'}}>$5,000+</span> · ClearanceIQ generates from your assessment in 2 hours</div>
             <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap',marginBottom:14}}>
               {['SSP','POA&M','SPRS Letter','Evidence Register'].map(d=>(<div key={d} style={{fontSize:11,color:'#A78BFA',display:'flex',gap:4}}><span style={{color:'#7C3AED'}}>✓</span>{d}</div>))}
             </div>
-            <a href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
+            <a id="ssp-btn" href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
               style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',
               borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',
               fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',
-              textDecoration:'none',marginBottom:0}}>
+              textDecoration:'none',position:'relative',zIndex:9999,pointerEvents:'all'}}>
               Generate My SSP &amp; POA&amp;M — $999 →
             </a>
             <div style={{fontSize:10,color:'#4C3875',marginTop:6}}>Delivered within 2 business hours · Based on your actual assessment responses</div>
-          </a>
+          </div>
         </div>
 
         <div className="nsh">What would you like to do next?</div>
