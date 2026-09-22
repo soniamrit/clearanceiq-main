@@ -1069,7 +1069,8 @@ function App(){
       {page==='results'&&<Results ans={ans} onBack={()=>go('assess')}/>}
       <footer>
         <div className="flogo">Clearance<em>IQ</em></div>
-        <div className="flinks">
+       <div className="flinks">
+          <a onClick={()=>window.open('/cmmc-suspension-2026.html','_blank')}>CMMC Suspension Guide</a>
           <a onClick={()=>window.open('/privacy-policy.html','_blank')}>Privacy Policy</a>
           <a onClick={()=>{try{localStorage.removeItem('ciq_consent')}catch(e){}window.location.reload();}}>Cookie Settings</a>
           <a href="mailto:hello@clearanceiq.io">hello@clearanceiq.io</a>
