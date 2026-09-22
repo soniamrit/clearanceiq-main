@@ -1070,11 +1070,7 @@ function App(){
       </nav>
       {page==='landing'&&<><div dangerouslySetInnerHTML={{__html:`
       <!-- PHASE 2 SUSPENSION ALERT -->
-      <div style="background:#7C2D12;border-bottom:2px solid #F97316;padding:10px 32px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-        <span style="font-size:13px;font-weight:700;color:#FED7AA;letter-spacing:.3px;">🚨 BREAKING July 13, 2026:</span>
-        <span style="font-size:13px;color:#FDE8D8;">Pentagon suspends CMMC Phase 2 C3PAO requirements — Phase 1 self-assessment and DFARS 252.204-7012 remain fully enforced.</span>
-        <span style="font-size:12px;font-weight:700;color:#F97316;border:1px solid #F97316;padding:2px 10px;border-radius:20px;white-space:nowrap;">Know your Phase 1 score →</span>
-      </div>`}}/><Landing onStart={()=>go('assess')}/></> }
+      `}}/><Landing onStart={()=>go('assess')}/></> }
       {page==='assess'&&<Assessment onDone={a=>{setAns(a);go('results');}}/>}
       {page==='results'&&<Results ans={ans} onBack={()=>go('assess')}/>}
       <footer>
