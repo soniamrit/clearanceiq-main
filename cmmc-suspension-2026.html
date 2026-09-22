@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CMMC Phase 2 Suspended — What Defense Contractors Must Still Do in 2026 | ClearanceIQ</title>
+<meta name="description" content="The September 2026 class deviation suspended CMMC Phase 2 C3PAO assessments. But Phase 1 self-assessment, SPRS scores, and False Claims Act liability are fully active. Here is what you still must do."/>
+<meta name="keywords" content="CMMC suspension 2026, CMMC Phase 2 suspended, SPRS score required, DFARS 252.204-7012, CMMC self-assessment, defense contractor cybersecurity"/>
+
+<!-- Open Graph for LinkedIn sharing -->
+<meta property="og:title" content="CMMC Phase 2 Suspended — What Defense Contractors Must Still Do in 2026"/>
+<meta property="og:description" content="C3PAO third-party assessment is suspended. SPRS submission, DFARS compliance, and False Claims Act liability are not. Here is exactly what changed and what you still owe the government."/>
+<meta property="og:url" content="https://clearanceiq.io/blog/cmmc-suspension-2026"/>
+<meta property="og:type" content="article"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Inter', system-ui, sans-serif;
+  background:#F8FAFC;
+  color:#0F172A;
+  line-height:1.7;
+}
+
+/* NAV */
+nav {
+  background:#070F1E;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.nav-logo {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:24px;
+  font-weight:900;
+  color:white;
+  text-decoration:none;
+}
+.nav-logo span { color:#00C8F0; }
+.nav-cta {
+  background:#00C8F0;
+  color:#070F1E;
+  padding:8px 20px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero {
+  background:linear-gradient(135deg, #070F1E, #0D1B35);
+  padding:60px 24px;
+  text-align:center;
+}
+.hero-tag {
+  display:inline-block;
+  background:rgba(220,38,38,0.2);
+  border:1px solid rgba(220,38,38,0.4);
+  color:#F87171;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:4px;
+  margin-bottom:20px;
+}
+.hero h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(32px,5vw,56px);
+  font-weight:900;
+  color:white;
+  line-height:1.1;
+  max-width:800px;
+  margin:0 auto 16px;
+}
+.hero h1 span { color:#00C8F0; }
+.hero-meta {
+  font-size:13px;
+  color:#607090;
+  margin-bottom:24px;
+}
+.hero-summary {
+  font-size:18px;
+  color:#8AA0B8;
+  max-width:680px;
+  margin:0 auto;
+  line-height:1.7;
+}
+
+/* ARTICLE */
+.article-wrap {
+  max-width:740px;
+  margin:0 auto;
+  padding:48px 24px 80px;
+}
+
+/* ALERT BOX */
+.alert {
+  border-radius:10px;
+  padding:20px 24px;
+  margin:28px 0;
+  border-left:4px solid;
+}
+.alert-red {
+  background:#FEF2F2;
+  border-color:#DC2626;
+  color:#7F1D1D;
+}
+.alert-green {
+  background:#ECFDF5;
+  border-color:#059669;
+  color:#064E3B;
+}
+.alert-blue {
+  background:#EFF6FF;
+  border-color:#2563EB;
+  color:#1E3A5F;
+}
+.alert-title {
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+.alert p { font-size:14px; line-height:1.6; }
+
+h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:30px;
+  font-weight:800;
+  color:#070F1E;
+  margin:40px 0 12px;
+  padding-bottom:8px;
+  border-bottom:2px solid #E2E8F0;
+}
+
+h3 {
+  font-size:18px;
+  font-weight:700;
+  color:#070F1E;
+  margin:24px 0 8px;
+}
+
+p {
+  font-size:16px;
+  color:#334155;
+  margin-bottom:16px;
+  line-height:1.8;
+}
+
+/* COMPARISON TABLE */
+.compare {
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,0.1);
+}
+.compare th {
+  background:#070F1E;
+  color:white;
+  padding:14px 16px;
+  font-size:13px;
+  font-weight:700;
+  text-align:left;
+  letter-spacing:0.5px;
+}
+.compare td {
+  padding:14px 16px;
+  font-size:14px;
+  border-bottom:1px solid #F0F4F8;
+  vertical-align:top;
+}
+.compare tr:last-child td { border-bottom:none; }
+.compare tr:nth-child(even) td { background:#F8FAFC; }
+.yes { color:#059669; font-weight:700; }
+.no { color:#DC2626; font-weight:700; }
+.changed { color:#D97706; font-weight:700; }
+
+/* CHECKLIST */
+.checklist {
+  list-style:none;
+  margin:16px 0 24px;
+}
+.checklist li {
+  padding:10px 0 10px 32px;
+  position:relative;
+  font-size:15px;
+  color:#334155;
+  border-bottom:1px solid #F0F4F8;
+}
+.checklist li::before {
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:#059669;
+  font-weight:900;
+  font-size:16px;
+}
+.checklist li.warn::before {
+  content:'⚠';
+  color:#DC2626;
+}
+
+/* CTA BLOCK */
+.cta-block {
+  background:linear-gradient(135deg, #070F1E, #0D1B35);
+  border-radius:16px;
+  padding:40px;
+  text-align:center;
+  margin:48px 0;
+}
+.cta-block h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:32px;
+  font-weight:900;
+  color:white;
+  margin-bottom:10px;
+}
+.cta-block p {
+  color:#8AA0B8;
+  font-size:15px;
+  margin-bottom:24px;
+}
+.cta-btn {
+  display:inline-block;
+  background:#00C8F0;
+  color:#070F1E;
+  padding:14px 32px;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+  margin:0 8px 10px;
+}
+.cta-btn-sec {
+  display:inline-block;
+  background:transparent;
+  color:#00C8F0;
+  padding:14px 32px;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:600;
+  text-decoration:none;
+  border:2px solid rgba(0,200,240,0.4);
+  margin:0 8px 10px;
+}
+.cta-note {
+  font-size:12px;
+  color:#405570;
+  margin-top:12px;
+  margin-bottom:0;
+}
+
+/* AUTHOR */
+.author-box {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background:white;
+  border:1px solid #E2E8F0;
+  border-radius:12px;
+  padding:20px;
+  margin-top:48px;
+}
+.author-avatar {
+  width:56px;
+  height:56px;
+  background:linear-gradient(135deg,#00C8F0,#7C3AED);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  flex-shrink:0;
+}
+.author-name { font-size:15px; font-weight:700; color:#070F1E; margin-bottom:3px; }
+.author-title { font-size:13px; color:#64748B; }
+
+/* FOOTER */
+footer {
+  background:#070F1E;
+  padding:24px;
+  text-align:center;
+  font-size:12px;
+  color:#405570;
+}
+footer a { color:#00C8F0; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://clearanceiq.io" class="nav-logo">Clearance<span>IQ</span>™</a>
+  <a href="https://clearanceiq.io" class="nav-cta">Free Assessment →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">⚠ September 2026 Regulatory Update</div>
+  <h1>CMMC Phase 2 Suspended —<br/><span>What You Still Owe the Government</span></h1>
+  <div class="hero-meta">Published September 2026 &nbsp;·&nbsp; ClearanceIQ Inc. &nbsp;·&nbsp; 6 min read</div>
+  <p class="hero-summary">
+    The DoD suspended third-party C3PAO assessments. That does not mean CMMC went away.
+    Your SPRS score, your SSP, your POA&M, and your False Claims Act liability are all still fully active.
+    Here is exactly what changed and what you still must do.
+  </p>
+</div>
+
+<div class="article-wrap">
+
+  <div class="alert alert-red">
+    <div class="alert-title">⚠ Do Not Confuse "Suspended" With "Cancelled"</div>
+    <p>The September 3, 2026 class deviation suspended CMMC Phase 2 third-party assessments. It did not suspend Phase 1 self-assessment requirements, SPRS submission, or False Claims Act liability. Every defense contractor with a DoD contract is still legally required to submit and maintain an accurate SPRS score.</p>
+  </div>
+
+  <h2>What Actually Happened on September 3, 2026</h2>
+
+  <p>The Department of Defense issued a class deviation on September 3, 2026 that suspended the requirement for CMMC Phase 2 third-party assessments by Certified Third-Party Assessor Organizations (C3PAOs). This was the formal certification process where an independent auditor would physically assess your cybersecurity posture before you could win certain DoD contracts.</p>
+
+  <p>That process — expensive, time-consuming, and complex — is on hold. But the confusion this created in the defense industrial base is dangerous. Many contractors read "CMMC suspended" and assumed their cybersecurity compliance obligations disappeared entirely. They did not.</p>
+
+  <h2>What Changed vs. What Did Not</h2>
+
+  <table class="compare">
+    <tr>
+      <th>Requirement</th>
+      <th>Before Sept 3</th>
+      <th>After Sept 3</th>
+    </tr>
+    <tr>
+      <td><strong>C3PAO Third-Party Assessment</strong></td>
+      <td>Required for Phase 2 contracts</td>
+      <td class="changed">⏸ Suspended</td>
+    </tr>
+    <tr>
+      <td><strong>Phase 1 Self-Assessment (110 controls)</strong></td>
+      <td class="yes">✓ Required</td>
+      <td class="yes">✓ Still Required</td>
+    </tr>
+    <tr>
+      <td><strong>SPRS Score Submission</strong></td>
+      <td class="yes">✓ Required</td>
+      <td class="yes">✓ Still Required</td>
+    </tr>
+    <tr>
+      <td><strong>System Security Plan (SSP)</strong></td>
+      <td class="yes">✓ Required</td>
+      <td class="yes">✓ Still Required</td>
+    </tr>
+    <tr>
+      <td><strong>Plan of Action & Milestones (POA&M)</strong></td>
+      <td class="yes">✓ Required</td>
+      <td class="yes">✓ Still Required</td>
+    </tr>
+    <tr>
+      <td><strong>DFARS 252.204-7012 Compliance</strong></td>
+      <td class="yes">✓ Active</td>
+      <td class="yes">✓ Still Active</td>
+    </tr>
+    <tr>
+      <td><strong>False Claims Act Liability</strong></td>
+      <td class="yes">✓ Active</td>
+      <td class="yes">✓ Still Active</td>
+    </tr>
+    <tr>
+      <td><strong>Affirming Official Attestation</strong></td>
+      <td class="yes">✓ Required</td>
+      <td class="yes">✓ Still Required</td>
+    </tr>
+  </table>
+
+  <h2>The False Claims Act Risk Is Not Suspended</h2>
+
+  <p>This is the part most contractors miss. The DOJ Civil Cyber-Fraud Initiative — launched in 2021 — allows the government to pursue False Claims Act cases against defense contractors who knowingly submit inaccurate SPRS scores. Since 2021, the DOJ has collected over $2.6 billion in settlements under this initiative.</p>
+
+  <p>The False Claims Act carries treble damages — three times the value of any affected contract — plus civil monetary penalties per false claim and potential federal criminal prosecution of individual officers who signed the attestation.</p>
+
+  <div class="alert alert-red">
+    <div class="alert-title">Legal Risk — 31 U.S.C. §§ 3729–3733</div>
+    <p>An Affirming Official who signs an inaccurate SPRS attestation is personally attesting to its accuracy. If that attestation is knowingly false or recklessly inaccurate, they face personal civil and criminal liability — not just corporate liability. The suspension of Phase 2 assessments does not change this exposure.</p>
+  </div>
+
+  <h2>What You Are Still Required to Do Right Now</h2>
+
+  <ul class="checklist">
+    <li>Conduct a self-assessment of all 110 NIST SP 800-171 Rev 2 security requirements</li>
+    <li>Calculate your SPRS score using the DoD Assessment Methodology (range: -203 to +110)</li>
+    <li>Submit your SPRS score to the Supplier Performance Risk System at sprs.army.mil</li>
+    <li>Maintain a current, written System Security Plan (SSP) — required by control 3.12.4</li>
+    <li>Maintain a Plan of Action & Milestones (POA&M) for any controls not fully implemented</li>
+    <li>Have an Affirming Official at your company sign an attestation confirming accuracy</li>
+    <li>Update your SPRS score within 30 days of any significant change to your security posture</li>
+    <li class="warn">Do NOT submit a score higher than your actual implementation — this is the core False Claims Act risk</li>
+  </ul>
+
+  <h2>Why So Many Contractors Are Confused</h2>
+
+  <p>The terminology did not help. "CMMC" has become shorthand for the entire DoD cybersecurity compliance framework — but CMMC technically refers to the certification program that includes C3PAO assessments. The underlying requirements — DFARS 252.204-7012, NIST SP 800-171, and SPRS submission — exist independently of CMMC and were never suspended.</p>
+
+  <p>Think of it this way: suspending the driving test does not mean you can ignore traffic laws. The rules of the road are still fully in effect. You are still liable if you cause an accident. The only thing that changed is you no longer need to pass a formal test before getting in the car.</p>
+
+  <h2>What This Means for Prime Contractors</h2>
+
+  <p>If you are a prime contractor, you face an additional layer of responsibility. Under the DoD's flow-down requirements, you are responsible for ensuring your subcontractors also meet NIST SP 800-171 requirements. The suspension of C3PAO assessments does not eliminate your responsibility to verify your supply chain's cybersecurity posture before awarding subcontracts.</p>
+
+  <p>Primes who fail to adequately assess their subcontractors' cybersecurity compliance face potential contractual liability and False Claims Act exposure of their own.</p>
+
+  <div class="alert alert-green">
+    <div class="alert-title">✓ The Silver Lining</div>
+    <p>Self-certification is now the permanent enforcement mechanism — not a temporary workaround. This means you control your compliance timeline and cost. You do not need to pay $50,000–$138,000 for a C3PAO assessment. A properly documented self-assessment with an accurate SPRS score is fully compliant with current DoD requirements.</p>
+  </div>
+
+  <h2>The Three Documents Every Contractor Needs</h2>
+
+  <h3>1. System Security Plan (SSP)</h3>
+  <p>A written document describing your information systems, the boundary of those systems, and the implementation status of all 110 NIST SP 800-171 controls. Required by control 3.12.4 — this is what an auditor or contracting officer would ask for first.</p>
+
+  <h3>2. Plan of Action & Milestones (POA&M)</h3>
+  <p>For every control that is not fully implemented, your POA&M documents the gap, your planned remediation approach, and your target completion date. Controls worth 5 points must be addressed within 90 days; lower-weight controls within 180 days. This document proves you are actively working toward full compliance.</p>
+
+  <h3>3. Affirming Official Attestation Letter</h3>
+  <p>A signed legal attestation from a senior company officer confirming that your SPRS score is accurate and that the SSP and POA&M are current. This is the document that creates personal legal liability — the Affirming Official must understand what they are signing.</p>
+
+  <div class="cta-block">
+    <h3>Generate All Three Documents from $999</h3>
+    <p>ClearanceIQ guides you through all 110 NIST SP 800-171 controls, calculates your accurate SPRS score, and generates your complete submission package — SSP, POA&M, SPRS Worksheet, and Affirming Official Letter — ready to sign and submit.</p>
+    <a href="https://clearanceiq.io" class="cta-btn">Start Free Assessment →</a>
+    <a href="https://certify.clearanceiq.io" class="cta-btn-sec">Start CERTIFY — Free to Start</a>
+    <p class="cta-note">Free anonymous assessment · No login required · Documents from $999 · Three patents pending</p>
+  </div>
+
+  <h2>Bottom Line</h2>
+
+  <p>The September 2026 class deviation removed one layer of compliance burden — the expensive C3PAO third-party assessment. It did not remove your legal obligation to assess your cybersecurity posture, document it accurately, and submit a truthful SPRS score to the government.</p>
+
+  <p>If you have not yet completed your NIST SP 800-171 self-assessment and submitted your SPRS score, you are currently out of compliance with DFARS 252.204-7012. That exposes your contracts, your company, and your Affirming Official to legal risk that the suspension of Phase 2 does nothing to reduce.</p>
+
+  <p>The good news: the path to compliance has never been clearer or more affordable. Self-certification is the law. Start with a free four-minute assessment at clearanceiq.io and know exactly where you stand.</p>
+
+  <div class="author-box">
+    <div class="author-avatar">🛡️</div>
+    <div>
+      <div class="author-name">ClearanceIQ Compliance Team</div>
+      <div class="author-title">ClearanceIQ Inc. · Irvine, California · clearanceiq.io · hello@clearanceiq.io</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 ClearanceIQ™ · ClearanceIQ Inc. · Delaware C-Corp · Not affiliated with the US DoD or any US Government Agency</p>
+  <p style="margin-top:6px;">
+    <a href="https://clearanceiq.io">Home</a> &nbsp;·&nbsp;
+    <a href="https://certify.clearanceiq.io">CERTIFY</a> &nbsp;·&nbsp;
+    <a href="https://clearanceiq.io/terms.html">Terms</a> &nbsp;·&nbsp;
+    <a href="https://clearanceiq.io/privacy-policy.html">Privacy</a>
+  </p>
+</footer>
+
+</body>
+</html>
