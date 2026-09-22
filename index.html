@@ -240,6 +240,16 @@ footer{background:#070F1E;padding:40px 32px;text-align:center;border-top:1px sol
 </style>
 </head>
 <body>
+  <div id="alert-banner" style="background:#DC2626;padding:10px 16px;text-align:center;position:relative;z-index:9999;">
+  <span style="font-size:13px;font-weight:700;color:white;line-height:1.5;">
+    🚨 <strong>BREAKING July 13, 2026:</strong> Pentagon suspends CMMC Phase 2 C3PAO requirements — Phase 1 self-assessment and DFARS 252.204-7012 remain fully enforced.&nbsp;
+    <a href="/cmmc-suspension-2026.html" style="color:#FDE68A;font-weight:800;text-decoration:underline;">Know your Phase 1 score →</a>
+  </span>
+  <span onclick="document.getElementById('alert-banner').style.display='none';sessionStorage.setItem('ab','1');"
+    style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1;">✕</span>
+</div>
+<script>if(sessionStorage.getItem('ab'))document.getElementById('alert-banner').style.display='none';</script>
+<div id="root"></div>
 <div id="root"></div>
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
