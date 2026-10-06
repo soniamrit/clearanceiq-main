@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="google-site-verification" content="I8O7m__Ff49TipRvNDa6EbeYkOtKrX8Q4GbQdHoY4KE" />
-  <head>
+<head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>ClearanceIQ — CMMC Compliance Intelligence for Aerospace &amp; Defense</title>
@@ -241,16 +240,7 @@ footer{background:#070F1E;padding:40px 32px;text-align:center;border-top:1px sol
 </style>
 </head>
 <body>
-  <div id="alert-banner" style="background:#DC2626;padding:10px 16px;text-align:center;position:relative;z-index:9999;">
-  <span style="font-size:13px;font-weight:700;color:white;line-height:1.5;">
- 🚨 <strong>September 3, 2026:</strong> Pentagon suspended CMMC Phase 2 C3PAO assessments — but Phase 1 self-assessment, SPRS submission, and False Claims Act liability remain fully enforced. Many contractors are confused about what this means for them.&nbsp;
-    <a href="/cmmc-suspension-2026.html" style="color:#FDE68A;font-weight:800;text-decoration:underline;white-space:nowrap;">Read what still applies to you →</a>
-  </span>
-  <span onclick="document.getElementById('alert-banner').style.display='none';sessionStorage.setItem('ab','1');"
-    style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1;">✕</span>
-</div>
-<script>if(sessionStorage.getItem('ab'))document.getElementById('alert-banner').style.display='none';</script>
-<div id="root"><a id="assess"></a></div>
+<div id="root"></div>
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -1070,13 +1060,16 @@ function App(){
       </nav>
       {page==='landing'&&<><div dangerouslySetInnerHTML={{__html:`
       <!-- PHASE 2 SUSPENSION ALERT -->
-      `}}/><Landing onStart={()=>go('assess')}/></> }
+      <div style="background:#7C2D12;border-bottom:2px solid #F97316;padding:10px 32px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <span style="font-size:13px;font-weight:700;color:#FED7AA;letter-spacing:.3px;">🚨 BREAKING July 13, 2026:</span>
+        <span style="font-size:13px;color:#FDE8D8;">Pentagon suspends CMMC Phase 2 C3PAO requirements — Phase 1 self-assessment and DFARS 252.204-7012 remain fully enforced.</span>
+        <span style="font-size:12px;font-weight:700;color:#F97316;border:1px solid #F97316;padding:2px 10px;border-radius:20px;white-space:nowrap;">Know your Phase 1 score →</span>
+      </div>`}}/><Landing onStart={()=>go('assess')}/></> }
       {page==='assess'&&<Assessment onDone={a=>{setAns(a);go('results');}}/>}
       {page==='results'&&<Results ans={ans} onBack={()=>go('assess')}/>}
       <footer>
         <div className="flogo">Clearance<em>IQ</em></div>
-       <div className="flinks">
-          <a onClick={()=>window.open('/cmmc-suspension-2026.html','_blank')}>CMMC Suspension Guide</a>
+        <div className="flinks">
           <a onClick={()=>window.open('/privacy-policy.html','_blank')}>Privacy Policy</a>
           <a onClick={()=>{try{localStorage.removeItem('ciq_consent')}catch(e){}window.location.reload();}}>Cookie Settings</a>
           <a href="mailto:hello@clearanceiq.io">hello@clearanceiq.io</a>
