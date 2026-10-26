@@ -12,7 +12,7 @@
   window.FORMSPREE_LEADS="xwvgkjvk";
   window.FORMSPREE_SCORES="mjgnvdgw";
   window.CALENDLY_URL="https://calendly.com/amrit-rapidscsolutions/free-cmmc-compliance-review";
-  window.CERTIFY_URL="https://certify.clearanceiq.io";
+  window.CERTIFY_URL="/cui-warning.html";
   window.trackEvent=function(n,p){if(window.__al&&typeof gtag!=='undefined')gtag('event',n,p||{});};
   window.__loadAnalytics=function(){
     if(window.__al)return;window.__al=true;
@@ -761,7 +761,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button style={{marginTop:8,padding:'12px 20px',background:'#00C8F0',color:'#070F1E',border:'none',borderRadius:8,fontSize:15,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif'}}
-                onClick={()=>{const _t=window.open('https://certify.clearanceiq.io','_blank');if(!_t)window.open('https://certify.clearanceiq.io','_blank');}}>
+                onClick={()=>{const _t=window.open('/cui-warning.html','_blank');if(!_t)window.open('/cui-warning.html','_blank');}}>
                 Start Free · Decide Later →
               </button>
             </div>
@@ -953,7 +953,7 @@ function Results({ans,onBack}){
             <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap',marginBottom:14}}>
               {['SSP','POA&M','SPRS Letter','Evidence Register'].map(d=>(<div key={d} style={{fontSize:11,color:'#A78BFA',display:'flex',gap:4}}><span style={{color:'#7C3AED'}}>✓</span>{d}</div>))}
             </div>
-            <a id="ssp-btn" href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
+            <a id="ssp-btn" href="/cui-warning.html" target="_blank" rel="noopener noreferrer"
               style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',
               borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',
               fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',
@@ -977,8 +977,8 @@ function Results({ans,onBack}){
             <div style={{fontSize:11,fontWeight:700,color:'#7C3AED',marginBottom:4}}>✓ Assessment free · Documents from $999</div>
             <button className="cbtn-c" style={{background:'#7C3AED'}}
               onClick={()=>{
-                const _t = window.open('https://certify.clearanceiq.io','_blank');
-                if(!_t) window.open('https://certify.clearanceiq.io','_blank');
+                const _t = window.open('/cui-warning.html','_blank');
+                if(!_t) window.open('/cui-warning.html','_blank');
                 if(window.trackEvent) window.trackEvent('certify_clicked',{score_bucket:level.label});
               }}>
               Begin 110-Control Assessment →
@@ -1090,7 +1090,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 
 
 <!-- FLOATING CTA — appears only when assessment results are shown -->
-<a id="ciq-fab" href="https://certify.clearanceiq.io" target="_blank"
+<a id="ciq-fab" href="/cui-warning.html" target="_blank"
    rel="noopener noreferrer"
    style="display:none;position:fixed;bottom:24px;right:24px;
           background:#7C3AED;color:white;padding:14px 22px;
