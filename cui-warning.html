@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CUI Data Warning — ClearanceIQ</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+  <!--
+  ============================================================
+  ClearanceIQ — CUI Prohibition Gate
+  Version: 1.0 | October 2026
+  File: cui-warning.html
+  ============================================================
+
+  HOW TO USE:
+  -----------
+  Option A — Standalone redirect page (simplest):
+    1. Upload this file to your web server or GitHub Pages.
+    2. Set ASSESSMENT_URL below to your assessment app URL.
+    3. Point your "Start Assessment" nav link to this page instead of
+       directly to the assessment. After the user acknowledges, they
+       are redirected automatically.
+
+  Option B — Embed as a modal inside your app:
+    1. Load this file in an <iframe> or inject the HTML into a modal.
+    2. Set USE_POSTMESSAGE = true below.
+    3. In your parent app, listen:
+         window.addEventListener('message', (e) => {
+           if (e.data?.type === 'cui_ack_complete') closeModal();
+         });
+
+  Option C — With server-side logging (recommended for audit trail):
+    1. Set API_ENDPOINT below to your backend route.
+    2. The gate will POST { version, timestamp, userAgent } to that URL
+       before redirecting. Your backend saves it to the database.
+    3. This gives you a per-user acknowledgment log you can show
+       to prime contractors during supply chain due diligence.
+
+  CONFIGURE THESE THREE LINES:
+  ============================================================ -->
+  <script>
+    var ASSESSMENT_URL   = 'https://certify.clearanceiq.io';  // Redirect after acknowledgment
+    var USE_POSTMESSAGE  = false;              // true = iframe/modal mode (no redirect)
+    var API_ENDPOINT     = '';                 // Optional: '/api/cui-acknowledgment'
+  </script>
+  <!-- ============================================================ -->
+
+  <style>
+    :root {
+      --navy: #0B1A2E; --cyan: #007EA0; --gray: #5C7489;
+      --bg: #F4F6F9; --surface: #fff; --border: #D9E4ED;
+      --text: #0B1A2E; --muted: #5C7489;
+      --red: #DC2626; --red-bg: #FEF2F2; --red-border: #FECACA;
+      --green: #16A34A; --green-bg: #F0FDF4;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #080E19; --surface: #101828; --border: #1E2B3C;
+        --text: #E8EDF4; --muted: #7A90A8;
+        --red-bg: #2D0A0A; --red-border: #7F1D1D;
+        --green-bg: #052E16;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #080E19; --surface: #101828; --border: #1E2B3C;
+      --text: #E8EDF4; --muted: #7A90A8;
+      --red-bg: #2D0A0A; --red-border: #7F1D1D;
+      --green-bg: #052E16;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      padding: max(16px, env(safe-area-inset-top, 0px))
+               max(16px, env(safe-area-inset-right, 0px))
+               max(16px, env(safe-area-inset-bottom, 0px))
+               max(16px, env(safe-area-inset-left, 0px));
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 560px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.08);
+    }
+
+    /* ── Header ── */
+    .card-header {
+      background: var(--navy);
+      padding: 20px 24px 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo { font-weight: 700; font-size: 15px; color: #fff; }
+    .logo em { color: var(--cyan); font-style: normal; }
+    .step-label {
+      margin-left: auto;
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,.5);
+      text-transform: uppercase; letter-spacing: .5px;
+    }
+
+    /* ── Body ── */
+    .card-body { padding: 28px 24px; }
+
+    .icon-row {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+    }
+    .shield-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--red-bg); border: 1.5px solid var(--red-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .icon-text h2 {
+      font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 3px;
+    }
+    .icon-text p { font-size: 13px; color: var(--muted); }
+
+    /* ── Alert banner ── */
+    .alert {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .alert-title {
+      font-size: 13px; font-weight: 700; color: var(--red);
+      margin-bottom: 6px;
+    }
+    .alert p { font-size: 13px; line-height: 1.6; color: var(--text); }
+
+    /* ── Rules list ── */
+    .what-section { margin-bottom: 20px; }
+    .what-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .5px; color: var(--muted); margin-bottom: 10px;
+    }
+    .rule-list { display: flex; flex-direction: column; gap: 8px; }
+    .rule { display: flex; gap: 10px; align-items: flex-start; }
+    .rule-icon {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .rule-icon.no  { background: #FEE2E2; color: var(--red); }
+    .rule-icon.yes { background: #DCFCE7; color: var(--green); }
+    .rule-text { font-size: 13px; line-height: 1.55; color: var(--text); }
+    .rule-text strong { color: var(--navy); }
+
+    .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+    /* ── Checkbox ── */
+    .confirm-box {
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px;
+      padding: 14px; background: var(--bg); border-radius: 8px;
+      border: 1.5px solid var(--border); cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .confirm-box:has(.chk:checked) {
+      border-color: var(--green); background: var(--green-bg);
+    }
+    .chk {
+      width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; margin-top: 1px;
+      accent-color: var(--green);
+    }
+    .confirm-text { font-size: 13px; line-height: 1.6; color: var(--text); cursor: pointer; }
+
+    /* ── Buttons ── */
+    .btn-row { display: flex; gap: 10px; }
+    .btn-continue {
+      flex: 1; padding: 12px;
+      background: var(--cyan); color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: background .15s, opacity .15s;
+      opacity: .4; pointer-events: none;
+      font-family: inherit;
+    }
+    .btn-continue.active { opacity: 1; pointer-events: auto; }
+    .btn-continue.active:hover { background: #006A87; }
+    .btn-privacy {
+      padding: 12px 16px;
+      background: var(--bg); color: var(--muted);
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 13px; font-weight: 500;
+      transition: background .15s; white-space: nowrap;
+      font-family: inherit; text-decoration: none;
+      display: flex; align-items: center;
+    }
+    .btn-privacy:hover { background: var(--border); }
+
+    /* ── Footer ── */
+    .card-footer {
+      padding: 12px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--muted);
+      background: var(--bg); text-align: center; line-height: 1.6;
+    }
+
+    /* ── Success state ── */
+    .success-screen {
+      display: none;
+      flex-direction: column; align-items: center; justify-content: center;
+      padding: 48px 24px; text-align: center;
+    }
+    .success-screen .check { font-size: 40px; margin-bottom: 16px; }
+    .success-screen h2 {
+      font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px;
+    }
+    .success-screen p {
+      font-size: 14px; color: var(--muted);
+      max-width: 340px; margin: 0 auto; line-height: 1.6;
+    }
+    .next-btn {
+      margin-top: 24px; padding: 12px 28px;
+      background: var(--cyan); color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      font-family: inherit; transition: background .15s;
+    }
+    .next-btn:hover { background: #006A87; }
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+      vertical-align: middle; margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <div class="logo">Clearance<em>IQ</em></div>
+    <div class="step-label">Before you begin</div>
+  </div>
+
+  <!-- ── Warning screen ── -->
+  <div id="warnScreen">
+    <div class="card-body">
+      <div class="icon-row">
+        <div class="shield-icon">⚠️</div>
+        <div class="icon-text">
+          <h2>Important: Data Input Restrictions</h2>
+          <p>Please read before starting your CMMC assessment</p>
+        </div>
+      </div>
+
+      <div class="alert">
+        <div class="alert-title">⛔ Do not enter Controlled Unclassified Information (CUI)</div>
+        <p>ClearanceIQ is a documentation assistance tool. It is <strong>not authorized to store, process, or transmit CUI</strong>. Your responses and generated documents pass through cloud infrastructure that does not meet the requirements for handling CUI.</p>
+      </div>
+
+      <div class="what-section">
+        <div class="what-label">What this means in practice</div>
+        <div class="rule-list">
+          <div class="rule">
+            <div class="rule-icon no">✕</div>
+            <div class="rule-text"><strong>Do not paste</strong> classified documents, CUI-marked files, or content extracted from ITAR/EAR-controlled systems.</div>
+          </div>
+          <div class="rule">
+            <div class="rule-icon no">✕</div>
+            <div class="rule-text"><strong>Do not enter</strong> real IP addresses, system credentials, network diagrams with live configurations, or personnel records.</div>
+          </div>
+          <div class="rule">
+            <div class="rule-icon no">✕</div>
+            <div class="rule-text"><strong>Do not describe</strong> the specific contents of CUI you handle — describe your <em>handling processes and controls</em>, not the information itself.</div>
+          </div>
+          <div class="rule">
+            <div class="rule-icon yes">✓</div>
+            <div class="rule-text"><strong>Do enter</strong> descriptions of how you protect information, what security controls you have, and where your systems and processes have gaps.</div>
+          </div>
+          <div class="rule">
+            <div class="rule-icon yes">✓</div>
+            <div class="rule-text"><strong>Do use</strong> general system descriptions ("we process CUI on Windows workstations in a dedicated VLAN") without embedding actual data or credentials.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <label class="confirm-box">
+        <input type="checkbox" class="chk" id="ackBox" onchange="onCheck()">
+        <span class="confirm-text">I understand that ClearanceIQ is not authorized to handle CUI. I will not enter Controlled Unclassified Information, classified content, real credentials, or sensitive system details into this platform. My Affirming Official remains responsible for reviewing and signing all generated documents before SPRS submission.</span>
+      </label>
+
+      <div class="btn-row">
+        <button class="btn-continue" id="continueBtn" onclick="onContinue()">
+          Begin Assessment →
+        </button>
+        <a class="btn-privacy" href="https://clearanceiq.io/privacy" target="_blank" rel="noopener">
+          Privacy policy ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      This acknowledgment is logged with your account. Questions: privacy@clearanceiq.io
+    </div>
+  </div>
+
+  <!-- ── Success screen ── -->
+  <div class="success-screen" id="successScreen">
+    <div class="check">✅</div>
+    <h2>Acknowledgment recorded</h2>
+    <p>You're ready to begin. Remember: describe your security controls and processes — not the information itself.</p>
+    <button class="next-btn" id="nextBtn" onclick="onNext()">
+      Start CMMC Assessment →
+    </button>
+  </div>
+</div>
+
+<script>
+  // ── Checkbox toggle ──────────────────────────────────────
+  function onCheck() {
+    var checked = document.getElementById('ackBox').checked;
+    var btn = document.getElementById('continueBtn');
+    btn.classList.toggle('active', checked);
+  }
+
+  // ── Continue: save ack + optionally POST to backend ──────
+  function onContinue() {
+    if (!document.getElementById('ackBox').checked) return;
+
+    var ack = {
+      version:   '1.0',
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    };
+
+    // Always save locally
+    try { localStorage.setItem('ciq_cui_ack', JSON.stringify(ack)); } catch(e) {}
+
+    // Optionally POST to your backend for a server-side audit log
+    if (API_ENDPOINT) {
+      fetch(API_ENDPOINT, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(ack),
+        credentials: 'include'          // sends session cookies
+      }).catch(function() {});           // fire-and-forget; don't block UX on failure
+    }
+
+    // Show success screen
+    document.getElementById('warnScreen').style.display  = 'none';
+    var ss = document.getElementById('successScreen');
+    ss.style.display = 'flex';
+  }
+
+  // ── Next: redirect or postMessage ────────────────────────
+  function onNext() {
+    var btn = document.getElementById('nextBtn');
+    btn.innerHTML = '<span class="spinner"></span> Starting…';
+    btn.disabled = true;
+
+    if (USE_POSTMESSAGE) {
+      // Iframe / modal mode — signal the parent app
+      window.parent.postMessage({ type: 'cui_ack_complete', version: '1.0' }, '*');
+    } else {
+      // Standalone page — redirect to assessment
+      window.location.href = ASSESSMENT_URL;
+    }
+  }
+
+  // ── Auto-skip if already acknowledged today ───────────────
+  // Uncomment the block below to skip this gate for returning users
+  // who acknowledged within the last 24 hours.
+  /*
+  (function() {
+    try {
+      var prev = JSON.parse(localStorage.getItem('ciq_cui_ack') || 'null');
+      if (prev && prev.timestamp) {
+        var age = Date.now() - new Date(prev.timestamp).getTime();
+        if (age < 86400000) {           // 24 hours
+          if (USE_POSTMESSAGE) {
+            window.parent.postMessage({ type: 'cui_ack_complete', version: '1.0' }, '*');
+          } else {
+            window.location.replace(ASSESSMENT_URL);
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+  */
+</script>
+</body>
+</html>
