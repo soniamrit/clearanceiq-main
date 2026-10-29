@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Disclaimers — ClearanceIQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --navy:   #06101e;
+    --navy2:  #0c1c36;
+    --navy3:  #0f2244;
+    --teal:   #00c2cb;
+    --teal2:  #008fa0;
+    --orange: #f97316;
+    --green:  #22c55e;
+    --red:    #ef4444;
+    --white:  #f0f4ff;
+    --offwh:  #c8d4e8;
+    --dim:    #4a5a7a;
+    --dim2:   #6a7a9a;
+    --border: rgba(0,194,203,0.18);
+    --border2:rgba(0,194,203,0.08);
+    --bg:     var(--navy);
+    --fg:     var(--offwh);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --navy:   #f0f6ff;
+      --navy2:  #e0eaf8;
+      --navy3:  #d0e0f0;
+      --bg:     #f0f6ff;
+      --fg:     #0c1c36;
+      --dim:    #4a5a7a;
+      --dim2:   #7a8a9a;
+      --border: rgba(0,160,175,0.25);
+      --border2:rgba(0,160,175,0.10);
+      --white:  #0c1c36;
+      --offwh:  #1a2c46;
+    }
+  }
+  :root[data-theme="light"] {
+    --navy:   #f0f6ff;
+    --navy2:  #e0eaf8;
+    --navy3:  #d0e0f0;
+    --bg:     #f0f6ff;
+    --fg:     #0c1c36;
+    --dim:    #4a5a7a;
+    --dim2:   #7a8a9a;
+    --border: rgba(0,160,175,0.25);
+    --border2:rgba(0,160,175,0.10);
+    --white:  #0c1c36;
+    --offwh:  #1a2c46;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--fg);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(6,16,30,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 max(24px, env(safe-area-inset-left,0px));
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    color: var(--white);
+  }
+  .nav-brand span { color: var(--teal); }
+  .nav-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--dim2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #0c1c36 0%, #06101e 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 56px max(24px, env(safe-area-inset-left,0px)) 48px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 15px;
+    color: var(--dim2);
+    max-width: 560px;
+    margin: 0 auto 20px;
+  }
+  .hero-date {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--dim);
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(0,194,203,0.07);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 12px;
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 max(24px, env(safe-area-inset-left,0px));
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0 48px;
+    align-items: start;
+    padding-top: 48px;
+    padding-bottom: 80px;
+  }
+  @media (max-width: 720px) {
+    .page-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 72px;
+  }
+  .sidebar-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 12px;
+  }
+  .sidebar nav a {
+    display: block;
+    font-size: 13px;
+    color: var(--dim2);
+    text-decoration: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.4;
+  }
+  .sidebar nav a:hover {
+    color: var(--teal);
+    border-left-color: var(--teal2);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    margin-bottom: 52px;
+    scroll-margin-top: 80px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border2);
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .icon-teal   { background: rgba(0,194,203,0.12); }
+  .icon-orange { background: rgba(249,115,22,0.12); }
+  .icon-green  { background: rgba(34,197,94,0.12); }
+  .icon-red    { background: rgba(239,68,68,0.12); }
+  .icon-blue   { background: rgba(96,165,250,0.12); }
+  .icon-purple { background: rgba(167,139,250,0.12); }
+  .icon-gray   { background: rgba(100,116,139,0.12); }
+
+  .section h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.2px;
+  }
+  .section p {
+    font-size: 15px;
+    color: var(--fg);
+    margin-bottom: 14px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 3px solid;
+  }
+  .callout-warn {
+    background: rgba(249,115,22,0.07);
+    border-color: var(--orange);
+    color: #fbb87a;
+  }
+  .callout-info {
+    background: rgba(0,194,203,0.07);
+    border-color: var(--teal);
+    color: var(--offwh);
+  }
+  .callout-danger {
+    background: rgba(239,68,68,0.07);
+    border-color: var(--red);
+    color: #fca5a5;
+  }
+  .callout strong {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.9;
+  }
+
+  /* ── LIST ── */
+  ul.legal-list {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0;
+  }
+  ul.legal-list li {
+    font-size: 15px;
+    color: var(--fg);
+    padding: 7px 0 7px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--border2);
+  }
+  ul.legal-list li:last-child { border-bottom: none; }
+  ul.legal-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* ── TABLE ── */
+  .legal-table-wrap { overflow-x: auto; margin: 18px 0; }
+  table.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.legal-table th {
+    background: rgba(0,194,203,0.1);
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  table.legal-table td {
+    padding: 10px 14px;
+    color: var(--fg);
+    border-bottom: 1px solid var(--border2);
+    vertical-align: top;
+  }
+  table.legal-table tr:last-child td { border-bottom: none; }
+
+  /* ── PATENT BADGE ── */
+  .patent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--teal);
+    background: rgba(0,194,203,0.08);
+    border: 1px solid rgba(0,194,203,0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin: 4px 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── CONTACT CARD ── */
+  .contact-card {
+    background: rgba(0,194,203,0.06);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 20px;
+  }
+  .contact-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .contact-card p { font-size: 14px; color: var(--dim2); margin-bottom: 6px; }
+  .contact-card a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #04090f;
+    border-top: 1px solid var(--border2);
+    padding: 32px max(24px, env(safe-area-inset-left,0px));
+    text-align: center;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .footer-brand span { color: var(--teal); }
+  footer p {
+    font-size: 13px;
+    color: var(--dim);
+    margin-bottom: 4px;
+  }
+  footer a { color: var(--teal2); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── DIVIDER ── */
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--border2);
+    margin: 48px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="https://clearanceiq.io">Clearance<span>IQ</span></a>
+    <span class="nav-badge">Legal &amp; Disclaimers</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Legal Information</div>
+  <h1>Disclaimers &amp; Terms</h1>
+  <p>Important legal information about ClearanceIQ's services, capabilities, and limitations. Please read before use.</p>
+  <span class="hero-date">Effective Date: October 29, 2026</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-label">On this page</div>
+    <nav>
+      <a href="#cmmc">CMMC Certification</a>
+      <a href="#ai">AI Analysis</a>
+      <a href="#fca">False Claims Act</a>
+      <a href="#pricing">Pricing &amp; Comparisons</a>
+      <a href="#results">Results &amp; Timelines</a>
+      <a href="#ip">Intellectual Property</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms of Use</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main>
+
+    <!-- ─── CMMC CERTIFICATION ─── -->
+    <section class="section" id="cmmc">
+      <div class="section-header">
+        <div class="section-icon icon-teal">🛡</div>
+        <h2>CMMC Certification</h2>
+      </div>
+
+      <p>ClearanceIQ is a <strong>documentation and attestation preparation platform</strong>. Our software helps defense contractors organize, document, and attest to their cybersecurity implementations across the 110 controls required by NIST SP 800-171 and CMMC Level 2.</p>
+
+      <div class="callout callout-warn">
+        <strong>Important Limitation</strong>
+        ClearanceIQ does not itself certify your organization for CMMC Level 2. CMMC Level 2 certification requires a formal assessment conducted by a DoD-authorized Certified Third-Party Assessment Organization (C3PAO), as required by 32 C.F.R. Part 170. ClearanceIQ prepares you for that assessment — it does not replace it.
+      </div>
+
+      <p>Specifically, ClearanceIQ:</p>
+      <ul class="legal-list">
+        <li>Guides you through documenting all 110 NIST SP 800-171 controls</li>
+        <li>Generates your System Security Plan (SSP), Plan of Action &amp; Milestones (POA&amp;M), and Attestation Package</li>
+        <li>Provides an AI-assisted gap analysis to identify weaknesses before your formal assessment</li>
+        <li>Prepares materials suitable for submission to your SPRS record</li>
+        <li>Does <em>not</em> conduct or substitute for a C3PAO-led Level 2 assessment</li>
+        <li>Does <em>not</em> guarantee that a C3PAO assessment will result in certification</li>
+      </ul>
+
+      <p>Assessment timelines and outcomes are determined by your C3PAO and the Department of Defense, not ClearanceIQ. Your organization's existing cybersecurity maturity, resource availability, and implementation quality will affect both the timeline and outcome of any formal assessment.</p>
+    </section>
+
+    <!-- ─── AI ANALYSIS ─── -->
+    <section class="section" id="ai">
+      <div class="section-header">
+        <div class="section-icon icon-blue">🤖</div>
+        <h2>AI Analysis &amp; Red Team Challenge</h2>
+      </div>
+
+      <p>ClearanceIQ includes an AI-powered Red Team Challenge feature that reviews your control implementations and poses adversarial questions to test the strength and completeness of your documentation — similar in approach to how a rigorous assessor or auditor might interrogate your answers.</p>
+
+      <div class="callout callout-info">
+        <strong>Not Legal Advice</strong>
+        All AI-generated analysis, scoring, feedback, and recommendations within ClearanceIQ are <strong>informational only</strong>. They do not constitute legal advice. They do not constitute a formal security assessment. They do not constitute a guarantee of compliance with any federal regulation, contract requirement, or cybersecurity standard.
+      </div>
+
+      <p>The AI Red Team Challenge is designed to help you identify potential weaknesses in your documentation before a formal assessment. However:</p>
+      <ul class="legal-list">
+        <li>AI responses may contain errors, omissions, or outdated interpretations</li>
+        <li>The AI does not have access to your actual systems, networks, or technical configurations</li>
+        <li>Passing the AI Red Team Challenge does not guarantee passing a C3PAO assessment</li>
+        <li>The AI analysis reflects documentation quality, not the underlying security of your environment</li>
+        <li>You should consult qualified legal counsel and cybersecurity professionals regarding your specific compliance posture</li>
+      </ul>
+
+      <p>For questions involving potential liability under federal contracts, you should engage a qualified attorney familiar with government contracting law.</p>
+    </section>
+
+    <!-- ─── FALSE CLAIMS ACT ─── -->
+    <section class="section" id="fca">
+      <div class="section-header">
+        <div class="section-icon icon-red">⚠️</div>
+        <h2>False Claims Act Notice</h2>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Federal Law Warning</strong>
+        Submitting false or inaccurate cybersecurity attestations to the Department of Defense may constitute a violation of the False Claims Act (31 U.S.C. §§ 3729–3733), which carries civil penalties of up to three times the value of the affected contracts, plus per-claim penalties.
+      </div>
+
+      <p>ClearanceIQ's AI Red Team Challenge is designed to help identify inconsistencies, overstatements, or unsupported claims in your control documentation <em>before</em> you submit any attestation to the DoD. This feature exists specifically to reduce your False Claims Act risk.</p>
+
+      <p>However, ClearanceIQ does not:</p>
+      <ul class="legal-list">
+        <li>Verify the accuracy of your underlying security implementations</li>
+        <li>Audit your actual systems, networks, or controls</li>
+        <li>Provide legal assurance that your attestation is FCA-compliant</li>
+        <li>Substitute for legal review of your final attestation package</li>
+      </ul>
+
+      <p><strong>You are solely responsible</strong> for the accuracy and truthfulness of all attestations submitted to the DoD or any prime contractor under CMMC requirements. ClearanceIQ strongly recommends that you have qualified legal counsel review your Attestation Package before submission, particularly if your organization has known gaps or unresolved POA&amp;M items.</p>
+    </section>
+
+    <!-- ─── PRICING ─── -->
+    <section class="section" id="pricing">
+      <div class="section-header">
+        <div class="section-icon icon-green">💲</div>
+        <h2>Pricing &amp; Competitive Comparisons</h2>
+      </div>
+
+      <p>ClearanceIQ references industry pricing for traditional CMMC consulting services in our marketing materials for comparison purposes. The following applies to all such comparisons:</p>
+
+      <div class="callout callout-info">
+        <strong>Data Source</strong>
+        Competitor and market pricing estimates cited by ClearanceIQ are based on publicly available market research, industry surveys, and published rate information as of the date of publication. Actual consulting costs vary significantly by project scope, geographic region, contractor size, number of systems in scope, and individual vendor pricing.
+      </div>
+
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>Claim</th>
+              <th>Basis</th>
+              <th>Variability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Traditional CMMC consulting: $15,000–$50,000+</td>
+              <td>Publicly available market research and industry pricing surveys</td>
+              <td>May be higher or lower depending on scope, region, and vendor</td>
+            </tr>
+            <tr>
+              <td>Traditional timelines: 6–12 months</td>
+              <td>Publicly available implementation guides and industry reports</td>
+              <td>May vary significantly by organization maturity and resources</td>
+            </tr>
+            <tr>
+              <td>ClearanceIQ: from $999</td>
+              <td>ClearanceIQ's current published pricing at clearanceiq.io</td>
+              <td>Subject to change; see current pricing page for authoritative rates</td>
+            </tr>
+            <tr>
+              <td>ClearanceIQ: 60–90 minutes for documentation</td>
+              <td>Typical platform completion time for prepared organizations</td>
+              <td>Varies significantly by user preparation and implementation complexity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The "$999" price refers to ClearanceIQ's software platform fee for generating the documentation and attestation package. It does not include C3PAO assessment fees, legal review costs, technology remediation costs, or any other expenses required to achieve and maintain CMMC certification.</p>
+    </section>
+
+    <!-- ─── RESULTS ─── -->
+    <section class="section" id="results">
+      <div class="section-header">
+        <div class="section-icon icon-orange">📊</div>
+        <h2>Results &amp; Timelines</h2>
+      </div>
+
+      <p>ClearanceIQ's stated timelines and outcomes are based on typical user experiences with our platform. Individual results vary significantly based on each organization's specific circumstances.</p>
+
+      <p>Factors that affect your documentation timeline include:</p>
+      <ul class="legal-list">
+        <li>Your organization's existing cybersecurity maturity and posture</li>
+        <li>The number and complexity of systems in scope for CMMC</li>
+        <li>Staff availability and familiarity with cybersecurity controls</li>
+        <li>Whether your organization has existing policies and procedures in place</li>
+        <li>The extent of remediation work required before documentation can be completed</li>
+        <li>Legal and compliance review requirements specific to your organization</li>
+      </ul>
+
+      <div class="callout callout-warn">
+        <strong>No Guarantee of Outcome</strong>
+        Completing the ClearanceIQ platform does not guarantee that your organization will pass a CMMC Level 2 assessment, win or retain DoD contracts, or achieve any specific compliance outcome. Results depend on many factors beyond the platform, including the quality of your underlying security implementations and the judgment of your C3PAO assessor.
+      </div>
+    </section>
+
+    <!-- ─── INTELLECTUAL PROPERTY ─── -->
+    <section class="section" id="ip">
+      <div class="section-header">
+        <div class="section-icon icon-purple">⚙️</div>
+        <h2>Intellectual Property</h2>
+      </div>
+
+      <p>The ClearanceIQ platform, including its AI Red Team Challenge engine, automated document generation system, gap analysis methodology, and associated workflows, incorporates proprietary technology protected under United States intellectual property law.</p>
+
+      <div style="margin: 16px 0;">
+        <span class="patent-badge">⚙ Patent Pending</span>
+      </div>
+
+      <p>One or more patent applications covering ClearanceIQ's core technology have been filed with the United States Patent and Trademark Office (USPTO) and are currently pending. Unauthorized reproduction, reverse engineering, or commercial replication of ClearanceIQ's methods, systems, or processes may constitute patent infringement upon issuance of any granted patents.</p>
+
+      <ul class="legal-list">
+        <li>All software, algorithms, and methodologies: © 2026 ClearanceIQ. All rights reserved.</li>
+        <li>"ClearanceIQ" and associated marks are trademarks of ClearanceIQ.</li>
+        <li>Document templates and output formats generated by the platform are licensed to you for use in your DoD compliance efforts only.</li>
+        <li>Generated documents remain your property; ClearanceIQ retains no claim over your compliance materials.</li>
+      </ul>
+    </section>
+
+    <!-- ─── PRIVACY ─── -->
+    <section class="section" id="privacy">
+      <div class="section-header">
+        <div class="section-icon icon-teal">🔒</div>
+        <h2>Privacy</h2>
+      </div>
+
+      <p>ClearanceIQ takes the privacy of your organization's security information seriously. Our gap analysis tool at <a href="https://clearanceiq.io" style="color:var(--teal);">clearanceiq.io</a> is designed to be anonymous by default.</p>
+
+      <div class="callout callout-info">
+        <strong>Anonymous Gap Analysis</strong>
+        The free gap analysis at clearanceiq.io does not require an account, does not collect your company name, and does not store identifying information linked to your gap analysis results. You can assess your posture without disclosing who you are.
+      </div>
+
+      <p>For users of our certification platform at <a href="https://certify.clearanceiq.io" style="color:var(--teal);">certify.clearanceiq.io</a>:</p>
+      <ul class="legal-list">
+        <li>Account information is required and is stored securely</li>
+        <li>Your documentation, control responses, and attestation materials are stored and encrypted</li>
+        <li>ClearanceIQ does not sell, share, or disclose your compliance documentation to third parties</li>
+        <li>ClearanceIQ does not transmit your data to the DoD, any prime contractor, or any government agency without your explicit action</li>
+        <li>Your data may be stored on U.S.-based cloud infrastructure subject to our data processing agreements</li>
+      </ul>
+
+      <p>For a full Privacy Policy, including data retention, deletion rights, and data processing details, contact us at the address below.</p>
+    </section>
+
+    <!-- ─── TERMS ─── -->
+    <section class="section" id="terms">
+      <div class="section-header">
+        <div class="section-icon icon-gray">📄</div>
+        <h2>Terms of Use</h2>
+      </div>
+
+      <p>By accessing or using any ClearanceIQ platform, you agree to the following:</p>
+
+      <ul class="legal-list">
+        <li><strong>Authorized Use:</strong> ClearanceIQ is intended for use by U.S.-based defense contractors and their authorized representatives seeking to achieve or maintain CMMC compliance.</li>
+        <li><strong>Accuracy of Inputs:</strong> You are responsible for the accuracy of all information you enter into the platform. ClearanceIQ cannot verify the truthfulness of your control implementations.</li>
+        <li><strong>No Attorney-Client Relationship:</strong> Use of ClearanceIQ does not create an attorney-client relationship. ClearanceIQ is a software tool, not a law firm.</li>
+        <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by law, ClearanceIQ's liability for any claim arising from use of the platform is limited to the amount you paid for the service.</li>
+        <li><strong>Indemnification:</strong> You agree to indemnify ClearanceIQ against claims arising from false, inaccurate, or misleading information you submit through the platform.</li>
+        <li><strong>Governing Law:</strong> These terms are governed by the laws of the United States and the State of [Delaware/your state], without regard to conflict of law provisions.</li>
+        <li><strong>Changes:</strong> ClearanceIQ may update these disclaimers and terms at any time. Continued use of the platform constitutes acceptance of updated terms.</li>
+        <li><strong>Export Controls:</strong> ClearanceIQ's platform is subject to U.S. export control laws. You agree not to access or use the platform from countries subject to U.S. sanctions.</li>
+      </ul>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-icon icon-teal">✉</div>
+        <h2>Contact &amp; Legal Inquiries</h2>
+      </div>
+
+      <p>For questions about these disclaimers, legal concerns, privacy matters, or IP inquiries, please contact us:</p>
+
+      <div class="contact-card">
+        <h3>ClearanceIQ Legal</h3>
+        <p>Email: <a href="mailto:legal@clearanceiq.io">legal@clearanceiq.io</a></p>
+        <p>Website: <a href="https://clearanceiq.io">clearanceiq.io</a></p>
+        <p>Certification Platform: <a href="https://certify.clearanceiq.io">certify.clearanceiq.io</a></p>
+        <p style="margin-top:12px; font-size:13px; color:var(--dim);">Response time: 2–5 business days for legal inquiries.</p>
+      </div>
+    </section>
+
+  </main>
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Clearance<span>IQ</span></div>
+    <p>CMMC Level 2 Compliance Platform for U.S. Defense Contractors</p>
+    <p style="margin-top:8px;">
+      <a href="https://clearanceiq.io">Home</a> &nbsp;·&nbsp;
+      <a href="https://certify.clearanceiq.io">Certify</a> &nbsp;·&nbsp;
+      <a href="mailto:legal@clearanceiq.io">Legal Contact</a>
+    </p>
+    <p style="margin-top:14px; font-size:12px;">© 2026 ClearanceIQ. All rights reserved. &nbsp;·&nbsp; Patent Pending &nbsp;·&nbsp; Effective October 29, 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
