@@ -12,7 +12,7 @@
   window.FORMSPREE_LEADS="xwvgkjvk";
   window.FORMSPREE_SCORES="mjgnvdgw";
   window.CALENDLY_URL="https://calendar.app.google/Pjda2oz5m4b5Qoeq5";
-  window.CERTIFY_URL="/cui-warning.html";
+  window.CERTIFY_URL="https://certify.clearanceiq.io";
   window.trackEvent=function(n,p){if(window.__al&&typeof gtag!=='undefined')gtag('event',n,p||{});};
   window.__loadAnalytics=function(){
     if(window.__al)return;window.__al=true;
@@ -564,7 +564,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 ['ASSESS — free gap identification','$0'],
                 ['CERTIFY — SSP + POA&M + expert review','from $999'],
                 ['Implementation partner (via referral)','$20,000–$50,000'],
-                ['DEFEND — AI red team + annual recert','$8,000–$20,000/yr'],
+                ['DEFEND — managed compliance + annual recert','$8,000–$20,000/yr'],
               ].map(([label,val])=>(
                 <div key={label} style={{display:'flex',justifyContent:'space-between',padding:'7px 0',borderBottom:'1px solid rgba(255,255,255,0.06)',fontSize:13}}>
                   <span style={{color:'#607090'}}>{label}</span>
@@ -573,13 +573,13 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               ))}
               <div style={{display:'flex',justifyContent:'space-between',padding:'12px 0 0',fontSize:16,fontWeight:700}}>
                 <span style={{color:'white'}}>Year 1 total</span>
-                <span style={{color:'#34D399'}}>$32,000–$78,000</span>
+                <span style={{color:'#34D399'}}>$28,999–$70,999</span>
               </div>
             </div>
           </div>
 
           <div style={{background:'rgba(5,150,105,0.12)',border:'1px solid rgba(5,150,105,0.25)',borderRadius:12,padding:24,textAlign:'center'}}>
-            <div style={{fontSize:48,fontWeight:900,color:'#34D399',fontFamily:"'Barlow Condensed',sans-serif",lineHeight:1}}>$60K–$106K</div>
+            <div style={{fontSize:48,fontWeight:900,color:'#34D399',fontFamily:"'Barlow Condensed',sans-serif",lineHeight:1}}>$67K–$109K</div>
             <div style={{fontSize:14,color:'#607090',marginTop:8}}>average savings in Year 1 vs. traditional compliance approach</div>
             <div style={{fontSize:12,color:'#405570',marginTop:6,fontStyle:'italic'}}>Source: DoD CMMC rulemaking cost studies, IBSSCORP 2026 certification cost analysis</div>
           </div>
@@ -781,7 +781,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button style={{marginTop:8,padding:'12px 20px',background:'#00C8F0',color:'#070F1E',border:'none',borderRadius:8,fontSize:15,fontWeight:700,cursor:'pointer',fontFamily:'Inter,sans-serif'}}
-                onClick={()=>{const _t=window.open('/cui-warning.html','_blank');if(!_t)window.open('/cui-warning.html','_blank');}}>
+                onClick={()=>{const _t=window.open('https://certify.clearanceiq.io','_blank');if(!_t)window.location.href='https://certify.clearanceiq.io';if(window.trackEvent)window.trackEvent('cta_certify_products',{});}}>
                 Start Free · Decide Later →
               </button>
             </div>
@@ -815,6 +815,30 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
           <p style={{textAlign:'center',fontSize:12,color:'#94A3B8',marginTop:20}}>
             All engagements include a free ASSESS score as your starting point. Pricing reflects single-entity certification. Multi-site and enterprise pricing available on request.
           </p>
+        </div>
+      </div>
+
+      {/* ── FAQ ── */}
+      <div className="sec" style={{background:'white'}}>
+        <div className="sec-in">
+          <div className="sec-ey">Common Questions</div>
+          <h2 className="sec-h">Frequently Asked Questions</h2>
+          {[
+            {q:'Is CMMC Phase 2 currently active?',a:'Phase 2 (C3PAO third-party assessments) was suspended by DoD CIO memo on July 13, 2026. Phase 1 self-assessment obligations remain fully in effect. All defense contractors handling CUI must maintain a valid SPRS score and can still be audited under the False Claims Act.'},
+            {q:'What is the difference between self-attestation and a C3PAO assessment?',a:'Phase 1 allows your Affirming Official to self-attest CMMC Level 2 compliance and submit your score to SPRS. Phase 2 (currently suspended) would require a Certified Third-Party Assessor Organization (C3PAO) to independently verify your compliance. ClearanceIQ CERTIFY produces Phase 1-compliant documentation.'},
+            {q:'How long does the CERTIFY assessment take?',a:'The guided 110-control assessment typically takes 60–90 minutes to complete. Document generation is immediate after payment. Expert review turnaround is 3–5 business days.'},
+            {q:'Does ClearanceIQ store my compliance data?',a:'No. Your entire free assessment runs in-browser using our patent-pending Anonymous-First Architecture™. No CUI or sensitive system data is ever transmitted to ClearanceIQ servers. Data stays local until you generate documents.'},
+            {q:'What is the SPRS score and why does it matter?',a:'The Supplier Performance Risk System (SPRS) score reflects your self-assessed NIST SP 800-171 implementation. Under 32 CFR Part 170, you are required to report this score before accepting contracts requiring CMMC Level 2. Submitting a false or inflated score creates False Claims Act exposure.'},
+            {q:'What if my contract requires a C3PAO assessment despite the Phase 2 pause?',a:'Some contracts executed before the Phase 2 suspension may still require C3PAO assessment. Check your contract language and consult legal counsel. ClearanceIQ CERTIFY accelerates your documentation preparation and helps you present a defensible posture to any assessor.'},
+          ].map(({q,a},i)=>(
+            <details key={i} style={{borderBottom:'1px solid #E2E8F0',padding:'20px 0'}}>
+              <summary style={{fontSize:16,fontWeight:600,color:'#070F1E',cursor:'pointer',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                {q}
+                <span style={{color:'#00C8F0',fontSize:20,flexShrink:0,marginLeft:16}}>+</span>
+              </summary>
+              <p style={{marginTop:12,fontSize:14,color:'#475569',lineHeight:1.7}}>{a}</p>
+            </details>
+          ))}
         </div>
       </div>
 
@@ -973,7 +997,7 @@ function Results({ans,onBack}){
             <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap',marginBottom:14}}>
               {['SSP','POA&M','SPRS Letter','Evidence Register'].map(d=>(<div key={d} style={{fontSize:11,color:'#A78BFA',display:'flex',gap:4}}><span style={{color:'#7C3AED'}}>✓</span>{d}</div>))}
             </div>
-            <a id="ssp-btn" href="/cui-warning.html" target="_blank" rel="noopener noreferrer"
+            <a id="ssp-btn" href="https://certify.clearanceiq.io" target="_blank" rel="noopener noreferrer"
               style={{display:'block',background:'#7C3AED',color:'white',padding:'14px 36px',
               borderRadius:10,fontSize:17,fontWeight:700,cursor:'pointer',
               fontFamily:'Inter,sans-serif',boxShadow:'0 4px 20px rgba(124,58,237,0.4)',
@@ -997,8 +1021,8 @@ function Results({ans,onBack}){
             <div style={{fontSize:11,fontWeight:700,color:'#7C3AED',marginBottom:4}}>✓ Assessment free · Documents from $999</div>
             <button className="cbtn-c" style={{background:'#7C3AED'}}
               onClick={()=>{
-                const _t = window.open('/cui-warning.html','_blank');
-                if(!_t) window.open('/cui-warning.html','_blank');
+                const _t = window.open('https://certify.clearanceiq.io','_blank');
+                if(!_t) window.location.href='https://certify.clearanceiq.io';
                 if(window.trackEvent) window.trackEvent('certify_clicked',{score_bucket:level.label});
               }}>
               Begin 110-Control Assessment →
@@ -1110,7 +1134,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 
 
 <!-- FLOATING CTA — appears only when assessment results are shown -->
-<a id="ciq-fab" href="/cui-warning.html" target="_blank"
+<a id="ciq-fab" href="https://certify.clearanceiq.io" target="_blank"
    rel="noopener noreferrer"
    style="display:none;position:fixed;bottom:24px;right:24px;
           background:#7C3AED;color:white;padding:14px 22px;
