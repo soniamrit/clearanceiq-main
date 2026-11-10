@@ -365,7 +365,7 @@ function RadarBG(){
 const QUESTIONS=[
   {id:"q0",area:"AS9100 Status",icon:"✈️",weight:"HIGH",
    q:"Is your organization currently certified to AS9100 Rev D (Quality Management Systems — Aerospace)?",
-   opts:["No — we do not have AS9100 certification","In progress — we are pursuing AS9100 certification","Yes — AS9100 Rev D certified (our patented crosswalk will automatically map qualifying controls)","Yes — plus additional aerospace quality certifications (NADCAP, FAA, etc.)"],
+   opts:["No — we do not have AS9100 certification","In progress — we are pursuing AS9100 certification","Yes — AS9100 Rev D certified (our patent-pending crosswalk will automatically map qualifying controls)","Yes — plus additional aerospace quality certifications (NADCAP, FAA, etc.)"],
    scores:[0,1,2,3]},
   {id:"q1",area:"CUI Identification",icon:"🗂",weight:"HIGH",q:"Have you formally identified which of your data qualifies as Controlled Unclassified Information (CUI)?",opts:["No — we haven't started this","Partially — some data identified but not fully documented","Yes — documented but not regularly reviewed","Yes — fully documented and actively maintained"],scores:[0,1,2,3]},
   {id:"q2",area:"Access Control",icon:"🔐",weight:"HIGH",q:"Do you control and limit access to your systems and CUI to only authorized users?",opts:["No formal access controls in place","Basic controls — shared passwords or minimal restrictions","Defined user accounts with some role-based access","Strong role-based access with regular reviews and MFA"],scores:[0,1,2,3]},
@@ -418,7 +418,7 @@ function Landing({onStart}){
           </div>
           <div style={{display:'flex',gap:24,flexWrap:'wrap',flex:1}}>
             {[
-              {icon:'🛡️',title:'Anonymous-First Architecture™',desc:'Our patented technology lets you evaluate your posture without tying data to your corporate domain, IP address, or entity name. Patent Pending 64/110,963.'},
+              {icon:'🛡️',title:'Anonymous-First Architecture™',desc:'Our patent-pending technology lets you evaluate your posture without tying data to your corporate domain, IP address, or entity name. U.S. Application 64/110,963.'},
               {icon:'⚡',title:'Zero Leak Protocol',desc:'Your gap data is scored locally in your browser and never transmitted to our servers. No compliance paper trail. No whistleblower risk during discovery.'},
               {icon:'📋',title:'Whistleblower Shield',desc:"Find your gaps before the government — or a relator — does. Map your NIST 800-171 posture safely, then remediate before you're required to certify."},
             ].map(item=>(
@@ -461,7 +461,7 @@ function Landing({onStart}){
         <div className="hero-inner">
           <div className="eyebrow">Patent Pending · CMMC Phase 2 Suspended · Phase 1 Enforced · U.S. Application 64/110,963</div>
           <div className="hlogo">Clearance<em>IQ</em><span style={{fontSize:'0.35em',verticalAlign:'super',color:'#607090',fontWeight:400}}>™</span></div>
-          <div className="htag">Map your NIST SP 800-171 gaps using our patented anonymous-first framework.
+          <div className="htag">Map your NIST SP 800-171 gaps using our patent-pending anonymous-first framework.
 No company tracking. Zero whistleblower or regulatory risk.</div>
           <StealthFighter style={{width:'100%',maxWidth:700,marginBottom:8,opacity:.95}}/>
           <div className="hnums">
@@ -475,7 +475,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
           </div>
           <div className="htrust">
             <div className="htrust-i">No company name or email needed to start</div>
-            <div className="htrust-i">4-min snapshot or full 20-min Level 2 gap analysis</div>
+            <div className="htrust-i">4-min snapshot · 60–90 min full certification workflow</div>
             <div className="htrust-i">Patent Pending</div>
             <div className="htrust-i">Aerospace and defense specialists</div>
           </div>
@@ -500,13 +500,13 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
             <div>
               <div className="pstat"><div className="pnum r">73%</div><div className="pdesc">of aerospace and defense SMBs will <strong>fail their CMMC audit</strong> without structured compliance support. Most have no dedicated security staff.</div></div>
               <div className="pstat"><div className="pnum a">18 mo</div><div className="pdesc">Average C3PAO assessment wait time when Phase 2 C3PAO certification resumes. Phase 2 is suspended — not cancelled. Companies that wait for clarity will face this queue when it returns. Phase 1 documentation started today is your head start.</div></div>
-              <div className="pstat"><div className="pnum n">$270K</div><div className="pdesc">Average first-year CMMC compliance cost when using <strong>unspecialized consultants</strong>. ClearanceIQ identifies exactly what matters and what does not.</div></div>
+              <div className="pstat"><div className="pnum n">$138K</div><div className="pdesc">Average first-year CMMC compliance cost when using <strong>unspecialized consultants</strong>. ClearanceIQ identifies exactly what matters and what does not.</div></div>
             </div>
             <div>
               <h3 style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:24,fontWeight:700,color:'#070F1E',marginBottom:28}}>The CMMC Enforcement Timeline</h3>
               <div className="tli">
                 <div className="tlm p">2021</div>
-                <div><div className="tl-date" style={{color:'#64748B'}}>November 2021</div><div className="tl-title">CMMC 2.0 Finalized</div><div className="tl-desc">DoD finalizes the framework. 110 controls across 14 domains.</div></div>
+                <div><div className="tl-date" style={{color:'#64748B'}}>November 2021</div><div className="tl-title">CMMC 2.0 Finalized</div><div className="tl-desc">DoD finalizes the framework. 110 controls across 13 domains.</div></div>
               </div>
               <div className="tl-line"/>
               <div className="tli">
@@ -562,7 +562,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               <div style={{fontSize:13,fontWeight:700,color:'#34D399',textTransform:'uppercase',letterSpacing:1,marginBottom:16}}>With ClearanceIQ</div>
               {[
                 ['ASSESS — free gap identification','$0'],
-                ['CERTIFY — SSP + POA&M + expert review','$3,500–$8,000'],
+                ['CERTIFY — SSP + POA&M + expert review','from $999'],
                 ['Implementation partner (via referral)','$20,000–$50,000'],
                 ['DEFEND — AI red team + annual recert','$8,000–$20,000/yr'],
               ].map(([label,val])=>(
@@ -680,7 +680,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 <div style={{fontSize:11,fontWeight:700,letterSpacing:2,color:'#00C8F0',textTransform:'uppercase',marginBottom:8}}>✈️ Patent Pending · AS9100 Crosswalk</div>
                 <div style={{fontSize:28,fontWeight:900,color:'white',fontFamily:"'Barlow Condensed',sans-serif",lineHeight:1.1,marginBottom:12}}>Already AS9100 Certified? Skip 70% of the Work.</div>
                 <div style={{fontSize:15,color:'#607090',lineHeight:1.65,marginBottom:16}}>
-                  Don't start your CMMC journey from scratch. Our patented AS9100 Crosswalk automatically maps your existing quality management controls to their NIST SP 800-171 equivalents — so you only address the gaps that actually exist.
+                  Don't start your CMMC journey from scratch. Our patent-pending AS9100 Crosswalk automatically maps your existing quality management controls to their NIST SP 800-171 equivalents — so you only address the gaps that actually exist.
                 </div>
                 <div style={{display:'flex',flexDirection:'column',gap:8}}>
                   {[
@@ -698,7 +698,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               <div style={{display:'flex',flexDirection:'column',justifyContent:'center',gap:16}}>
                 <div style={{background:'rgba(0,200,240,0.08)',border:'1px solid rgba(0,200,240,0.2)',borderRadius:12,padding:24}}>
                   <div style={{fontSize:13,fontWeight:700,color:'#00C8F0',marginBottom:8}}>Tell us your certification status:</div>
-                  <div style={{fontSize:14,color:'#8AAEC8',marginBottom:16}}>When you start the free assessment, select "AS9100 Rev D Certified" and our patented crosswalk engine identifies your CMMC controls automatically — saving 40–70% of your gap analysis time.</div>
+                  <div style={{fontSize:14,color:'#8AAEC8',marginBottom:16}}>When you start the free assessment, select "AS9100 Rev D Certified" and our patent-pending crosswalk engine identifies your CMMC controls automatically — saving 40–70% of your gap analysis time.</div>
                   <button className="btn-p" style={{width:'100%',padding:'14px 20px',fontSize:15}}
                     onClick={()=>{if(window.trackEvent)window.trackEvent('as9100_cta_clicked',{});window.scrollTo({top:0,behavior:'smooth'});}}>
                     Start AS9100-Accelerated Assessment →
@@ -769,11 +769,11 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               <div style={{position:'absolute',top:-12,left:'50%',transform:'translateX(-50%)',background:'#00C8F0',color:'#070F1E',fontSize:11,fontWeight:700,padding:'3px 14px',borderRadius:20,letterSpacing:1,whiteSpace:'nowrap'}}>MOST POPULAR</div>
               <div style={{fontSize:11,fontWeight:700,letterSpacing:2,color:'#00C8F0',textTransform:'uppercase'}}>Professional</div>
               <div style={{fontSize:28,fontWeight:900,color:'white',fontFamily:"'Barlow Condensed',sans-serif",lineHeight:1}}>CERTIFY</div>
-              <div style={{fontSize:28,fontWeight:900,color:'#00C8F0',fontFamily:"'Barlow Condensed',sans-serif"}}>$3,500 – $8,000</div>
-              <div style={{fontSize:12,color:'#607090'}}>per certification cycle</div>
+              <div style={{fontSize:28,fontWeight:900,color:'#00C8F0',fontFamily:"'Barlow Condensed',sans-serif"}}>from $999</div>
+              <div style={{fontSize:12,color:'#607090'}}>Documents from $999 · Expert review from $3,500</div>
               <div style={{width:'100%',height:1,background:'rgba(255,255,255,0.08)'}}/>
               <div style={{fontSize:14,color:'#8AAEC8',lineHeight:1.6,flex:1}}>
-                Guided control-by-control documentation. Produces a signed SSP, POA&M, and Affirming Official letter ready for SPRS submission. Expert review before you sign.
+                Guided control-by-control documentation. Produces a signed SSP, POA&M, and Affirming Official letter ready for SPRS submission. Add expert review before you sign.
               </div>
               {['Guided 110-control documentation','System Security Plan (SSP)','Plan of Action & Milestones','SPRS-ready certification letter','Expert review before signing','One revision cycle included'].map(f=>(
                 <div key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#C8DCF0'}}>
@@ -794,9 +794,9 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               <div style={{fontSize:12,color:'#64748B'}}>annually</div>
               <div style={{width:'100%',height:1,background:'#E2E8F0'}}/>
               <div style={{fontSize:14,color:'#64748B',lineHeight:1.6,flex:1}}>
-                Everything in CERTIFY plus AI Red Teaming. An AI acts as a DOJ investigator and adversarially challenges every claim before you sign. Produces a False Claims Risk Report. Annual recertification included.
+                Everything in CERTIFY plus a fully managed annual compliance program. Priority expert access, annual recertification, and a False Claims Risk Report that stress-tests every attestation before you sign.
               </div>
-              {['Everything in CERTIFY','AI Red Team — DOJ investigator persona','False Claims Risk Report','Documentation gap analysis','Annual recertification cycle','Priority expert access'].map(f=>(
+              {['Everything in CERTIFY','Annual recertification cycle','False Claims Risk Report','Managed compliance program','Documentation gap analysis','Priority expert access'].map(f=>(
                 <div key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#2D3748'}}>
                   <span style={{color:'#5B21B6',fontWeight:700,flexShrink:0}}>✓</span>{f}
                 </div>
