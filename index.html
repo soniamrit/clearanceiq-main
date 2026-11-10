@@ -622,7 +622,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
           </div>
           <div style={{textAlign:'center',marginTop:48}}>
             <button className="btn-p" onClick={onStart} style={{fontSize:18,padding:'18px 40px'}}>Start Free Anonymous Assessment →</button>
-            <p style={{fontSize:13,color:'#64748B',marginTop:12,fontWeight:500}}>Anonymous · Patent Pending · 4 minutes</p>
+            <p style={{fontSize:13,color:'#64748B',marginTop:12,fontWeight:500}}>Anonymous · Patent Pending · ~7 minutes</p>
           </div>
         </div>
       </div>
@@ -752,7 +752,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
               <div style={{fontSize:36,fontWeight:900,color:'#070F1E',fontFamily:"'Barlow Condensed',sans-serif"}}>$0</div>
               <div style={{width:'100%',height:1,background:'#E2E8F0'}}/>
               <div style={{fontSize:14,color:'#64748B',lineHeight:1.6,flex:1}}>
-                Anonymous 13-question CMMC Phase 1 readiness check. Instant score and gap breakdown. No account required. Know where you stand in 4 minutes.
+                Anonymous 13-question CMMC Phase 1 readiness check. Instant score and gap breakdown. No account required. Know where you stand in ~7 minutes.
               </div>
               {['Instant compliance score','Control domain gap breakdown','Benchmarked against A&D industry','No login or email required'].map(f=>(
                 <div key={f} style={{display:'flex',gap:8,alignItems:'flex-start',fontSize:13,color:'#2D3748'}}>
@@ -760,7 +760,7 @@ No company tracking. Zero whistleblower or regulatory risk.</div>
                 </div>
               ))}
               <button className="btn-p" style={{marginTop:8,fontSize:15,padding:'12px 20px'}}
-                onClick={()=>{if(window.trackEvent)window.trackEvent('cta_assess_products',{});window.scrollTo({top:0,behavior:'smooth'});}}>
+                onClick={()=>{if(window.trackEvent)window.trackEvent('cta_assess_products',{});onStart();}}>
                 Start Free Assessment →
               </button>
             </div>
